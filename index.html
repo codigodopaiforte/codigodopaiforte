@@ -134,6 +134,19 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:16px;text-align:center
 .consultoria-photo{width:100%;aspect-ratio:640/713;object-fit:cover;object-position:center top;display:block;}
 .consultoria-photo-caption{font-size:10px;color:rgba(255,255,255,.35);text-align:center;padding:8px 18px 0;font-style:italic;line-height:1.5;}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1081487534672644');
+fbq('track','PageView');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="pay.hotmart.com"]');if(a){fbq('track','InitiateCheckout',{content_name:document.title});}});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1081487534672644&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
