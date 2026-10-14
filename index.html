@@ -252,6 +252,32 @@ footer{background:var(--ink);color:#77756F;font-size:13px;padding:22px 0 96px;}
 .agesl a b{display:block;font-family:var(--serif);font-weight:500;font-size:18px;color:var(--text);}
 .agesl a:hover{border-color:var(--brass);}
 
+/* cards de produto */
+.pc{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;text-decoration:none;color:inherit;background:var(--card);border-radius:16px;padding:16px;margin-top:12px;
+    box-shadow:0 1px 2px rgba(20,23,27,.06),0 10px 26px -16px rgba(20,23,27,.35);transition:transform .15s,box-shadow .15s;}
+.pc:hover{transform:translateY(-2px);box-shadow:0 1px 2px rgba(20,23,27,.06),0 16px 30px -16px rgba(20,23,27,.45);}
+.th{position:relative;width:96px;height:124px;border-radius:12px;background:var(--ink);overflow:hidden;}
+.th .mc{position:absolute;left:14px;top:16px;width:70px;height:94px;background:#fff;border-radius:7px;padding:8px 7px;transform:rotate(-4deg);box-shadow:-7px 6px 0 -1px #CFCCC4,0 8px 16px rgba(0,0,0,.5);}
+.th .mc i{display:block;width:6px;height:6px;border-radius:50%;background:var(--a);margin-bottom:5px;}
+.th .mc b{display:block;font-family:var(--serif);font-weight:600;font-size:10.5px;line-height:1.08;color:var(--text);margin-bottom:6px;}
+.th .mc s{display:block;height:3px;border-radius:2px;background:#E3E1DC;margin-top:4px;text-decoration:none;}
+.th .mc s:nth-of-type(2){width:80%;}.th .mc s:nth-of-type(3){width:60%;}
+.pc .cat{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--a);margin-bottom:5px;}
+.pc .cat::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--a);}
+.pc .q{font-family:var(--serif);font-size:20px;line-height:1.18;letter-spacing:-.2px;margin-bottom:7px;}
+.pc .n{font-size:14px;font-weight:700;}
+.pc .d{font-size:13.5px;color:var(--muted);line-height:1.45;margin-top:2px;}
+.pc .go{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:700;color:var(--text);border-bottom:1.5px solid var(--a);padding-bottom:1px;}
+.pc.feat{background:var(--ink);color:#EDEBE6;grid-template-columns:116px 1fr;padding:20px 18px;}
+.pc.feat .th{width:116px;height:150px;background:#22262C;}
+.pc.feat .th .mc{left:18px;top:20px;width:84px;height:112px;}
+.pc.feat .th .mc b{font-size:12.5px;}
+.pc.feat .q{font-size:23px;color:#F6F4EF;}
+.pc.feat .n{color:#F6F4EF;}.pc.feat .d{color:#AEACA6;}.pc.feat .go{color:#F6F4EF;}
+.pc .hot{display:inline-block;font-size:11.5px;font-weight:700;color:#16130D;background:var(--brass-2);border-radius:20px;padding:2px 9px;margin-bottom:8px;}
+.pc .agesl{grid-column:1 / -1;margin-top:2px;}
+.grp > p{font-family:var(--serif);font-size:19px;color:var(--text);border-bottom:0;padding-bottom:0;}
+.grp > p span + span{font-family:var(--sans);font-size:13px;color:var(--muted);align-self:center;}
 .coach{background:var(--ink);color:#EDEBE6;padding:0 0 52px;}
 .coach .cph{position:relative;height:340px;}
 .coach .cph img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
@@ -315,22 +341,19 @@ footer{background:var(--ink);color:#77756F;font-size:13px;padding:22px 0 96px;}
     <p class="intro">Escolha pelo que você está vivendo agora.</p>
 
     <div class="grp"><p><span>Pra hora difícil</span></p>
-      <a class="row" href="/emergencia/"><div><span class="hot">Mais procurado</span><div class="q">Engasgou, teve febre, caiu. O que eu faço?</div><div class="p"><b>Cartilha de Emergência do Pai.</b> 30 situações: o que fazer, o que evitar e quando correr pro médico.</div></div><span class="ar" aria-hidden="true"></span></a>
-      <a class="row" href="/birra/"><div><div class="q">A birra dele me tira do sério.</div><div class="p"><b>Birra Sem Grito.</b> 5 passos e roteiros prontos pra usar na hora. 1 a 5 anos.</div></div><span class="ar" aria-hidden="true"></span></a>
-      <a class="row" href="/falar/"><div><div class="q">Na hora, eu não sei o que falar.</div><div class="p"><b>O Que Falar Quando…</b> 40 situações com a frase certa, e o que não falar.</div></div><span class="ar" aria-hidden="true"></span></a>
+      <a class="pc feat" href="/emergencia/" style="--a:#B9402B"><div class="th" aria-hidden="true"><div class="mc"><i></i><b>Engasgo com objeto ou alimento</b><s></s><s></s><s></s></div></div><div><span class="hot">Mais procurado</span><div class="cat">Emergência</div><div class="q">Engasgou, teve febre, caiu. O que eu faço?</div><div class="n">Cartilha de Emergência do Pai</div><div class="d">30 situações: o que fazer, o que evitar e quando correr pro médico.</div><span class="go">Ver o guia</span></div></a>
+      <a class="pc" href="/birra/" style="--a:#3D6670"><div class="th" aria-hidden="true"><div class="mc"><i></i><b>Na hora da birra</b><s></s><s></s><s></s></div></div><div><div class="cat">Birra · 1 a 5 anos</div><div class="q">A birra dele me tira do sério.</div><div class="n">Birra Sem Grito</div><div class="d">5 passos e roteiros prontos pra usar na hora.</div><span class="go">Ver o guia</span></div></a>
+      <a class="pc" href="/falar/" style="--a:#4F6B4A"><div class="th" aria-hidden="true"><div class="mc"><i></i><b>“Eu te odeio, papai!”</b><s></s><s></s><s></s></div></div><div><div class="cat">Frases prontas</div><div class="q">Na hora, eu não sei o que falar.</div><div class="n">O Que Falar Quando…</div><div class="d">40 situações com a frase certa, e o que não falar.</div><span class="go">Ver o guia</span></div></a>
     </div>
 
     <div class="grp"><p><span>Pai de menino</span><span>0 a 5 anos</span></p>
-      <a class="row" href="/menino/"><div><div class="q">Pipi, xixi e desfralde: ninguém me ensinou.</div><div class="p"><b>Pipi, Xixi e Desfralde.</b> Higiene, desfralde, xixi em pé e proteção do corpo.</div></div><span class="ar" aria-hidden="true"></span></a>
-      <a class="row" href="/manual/"><div><div class="q">Quero saber tudo o que ele precisa de mim, fase por fase.</div><div class="p"><b>Manual do Pai de Menino 0–5.</b> Corpo, proteção, emoções, caráter e movimento.</div></div><span class="ar" aria-hidden="true"></span></a>
+      <a class="pc" href="/menino/" style="--a:#4F6B4A"><div class="th" aria-hidden="true"><div class="mc"><i></i><b>Nunca puxe a pele à força</b><s></s><s></s><s></s></div></div><div><div class="cat">Corpo e cuidados</div><div class="q">Pipi, xixi e desfralde: ninguém me ensinou.</div><div class="n">Pipi, Xixi e Desfralde</div><div class="d">Higiene, desfralde, xixi em pé e proteção do corpo.</div><span class="go">Ver o guia</span></div></a>
+      <a class="pc" href="/manual/" style="--a:#B8893A"><div class="th" aria-hidden="true"><div class="mc"><i></i><b>As 4 regras da lutinha boa</b><s></s><s></s><s></s></div></div><div><div class="cat">Guia completo</div><div class="q">Quero saber tudo o que ele precisa de mim, fase por fase.</div><div class="n">Manual do Pai de Menino 0–5</div><div class="d">Corpo, proteção, emoções, caráter e movimento.</div><span class="go">Ver o guia</span></div></a>
     </div>
 
     <div class="grp"><p><span>Pra desenvolver junto</span></p>
-      <div class="row mv"><div>
-        <a href="/movimento/" style="text-decoration:none;color:inherit"><div class="q">Que brincadeira fazer pra idade dele?</div><div class="p"><b>Meu Filho em Movimento.</b> Estímulo motor por idade. Toque na idade do seu filho:</div></a>
-        <div class="agesl"><a href="/movimento/#fase1"><b>0–12</b>meses</a><a href="/movimento/#fase2"><b>1–2</b>anos</a><a href="/movimento/#fase3"><b>2–3</b>anos</a><a href="/movimento/#fase4"><b>3–4</b>anos</a></div>
-      </div></div>
-      <a class="row" href="/treino/"><div><div class="q">Quero treinar junto com ele.</div><div class="p"><b>Treino de Pai com Filho.</b> 15 minutos, sem academia: você ganha força, ele ganha coordenação.</div></div><span class="ar" aria-hidden="true"></span></a>
+      <div class="pc" style="--a:#3F6079"><a href="/movimento/" style="text-decoration:none;color:inherit;display:contents"><div class="th" aria-hidden="true"><div class="mc"><i></i><b>Circuito de engatinhar</b><s></s><s></s><s></s></div></div><div><div class="cat">Estímulo por idade</div><div class="q">Que brincadeira fazer pra idade dele?</div><div class="n">Meu Filho em Movimento</div><div class="d">Atividades no chão da sala, por fase. Toque na idade dele:</div><span class="go">Ver o guia</span></div></a><div class="agesl"><a href="/movimento/#fase1"><b>0–12</b>meses</a><a href="/movimento/#fase2"><b>1–2</b>anos</a><a href="/movimento/#fase3"><b>2–3</b>anos</a><a href="/movimento/#fase4"><b>3–4</b>anos</a></div></div>
+      <a class="pc" href="/treino/" style="--a:#44525E"><div class="th" aria-hidden="true"><div class="mc"><i></i><b>Ponte humana</b><s></s><s></s><s></s></div></div><div><div class="cat">Pai e filho · 3 a 5 anos</div><div class="q">Quero treinar junto com ele.</div><div class="n">Treino de Pai com Filho</div><div class="d">15 minutos, sem academia: você ganha força, ele ganha coordenação.</div><span class="go">Ver o guia</span></div></a>
     </div>
   </div>
 </section>
