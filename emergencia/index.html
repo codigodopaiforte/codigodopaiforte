@@ -164,6 +164,12 @@ footer{background:var(--ink);color:#77756F;font-size:13px;padding:22px 0 96px;}
 /* entrada única do maço de cartões */
 @keyframes deal{from{opacity:0;transform:translateY(18px);}to{opacity:1;}}
 .deck .front{animation:deal .6s .15s both cubic-bezier(.2,.7,.2,1);}
+
+.peek{background:var(--ink);color:#EDEBE6;padding:44px 0 40px;overflow:hidden;}
+.peek h2{color:#F6F4EF;margin-bottom:6px;}
+.peek .intro{color:#AEACA6;margin-bottom:0;}
+.top .buy{margin-top:26px;}
+.top .pick{margin-top:26px;}
 </style>
 </head>
 <body>
@@ -174,21 +180,6 @@ footer{background:var(--ink);color:#77756F;font-size:13px;padding:22px 0 96px;}
     <h1>Saiba o que fazer antes do pânico chegar.</h1>
     <p class="lead">Engasgo, febre alta, queda, birra. <b>30 situações reais, uma por cartão</b>, com base nas diretrizes da Sociedade Brasileira de Pediatria.</p>
 
-    <div class="deck" aria-label="Exemplo de um dos 30 cartões da cartilha">
-      <div class="c b3"></div>
-      <div class="c b2"></div>
-      <div class="c front">
-        <div class="tab"><span>Emergência física</span><span>Cartilha do Pai</span></div>
-        <h3>Engasgo com objeto ou alimento</h3>
-        <dl>
-          <div><dt>Sinais</dt><dd>Não consegue falar, tossir ou chorar. Leva as mãos ao pescoço. Lábios arroxeados.</dd></div>
-          <div><dt>Menor de 1 ano</dt><dd>De bruços no seu antebraço: 5 tapas firmes entre as escápulas, depois 5 compressões no peito.</dd></div>
-          <div><dt>Maior de 1 ano</dt><dd>Manobra de Heimlich.</dd></div>
-          <div><dt>Evite</dt><dd class="no">Enfiar o dedo na boca às cegas.</dd></div>
-        </dl>
-        <div class="foot"><span>Ligue 192 se não resolver</span><span>SBP</span></div>
-      </div>
-    </div>
 
     <div class="buy">
       <div class="price"><s>R$47</s><strong>R$27</strong><small>pagamento único</small></div>
@@ -208,6 +199,29 @@ footer{background:var(--ink);color:#77756F;font-size:13px;padding:22px 0 96px;}
       <li><div><b>O que fazer numa queda com batida de cabeça</b><span>E o que não fazer numa queimadura, o erro mais comum.</span></div></li>
       <li><div><b>Como segurar uma birra em público</b><span>Sem ceder e sem explodir. E o que falar quando ele acorda com medo.</span></div></li>
     </ul>
+  </div>
+</section>
+
+<section class="peek">
+  <div class="wrap">
+    <h2>Veja como é por dentro</h2>
+    <p class="intro">Um trecho real do material.</p>
+
+    <div class="deck" aria-label="Exemplo de um dos 30 cartões da cartilha">
+      <div class="c b3"></div>
+      <div class="c b2"></div>
+      <div class="c front">
+        <div class="tab"><span>Emergência física</span><span>Cartilha do Pai</span></div>
+        <h3>Engasgo com objeto ou alimento</h3>
+        <dl>
+          <div><dt>Sinais</dt><dd>Não consegue falar, tossir ou chorar. Leva as mãos ao pescoço. Lábios arroxeados.</dd></div>
+          <div><dt>Menor de 1 ano</dt><dd>De bruços no seu antebraço: 5 tapas firmes entre as escápulas, depois 5 compressões no peito.</dd></div>
+          <div><dt>Maior de 1 ano</dt><dd>Manobra de Heimlich.</dd></div>
+          <div><dt>Evite</dt><dd class="no">Enfiar o dedo na boca às cegas.</dd></div>
+        </dl>
+        <div class="foot"><span>Ligue 192 se não resolver</span><span>SBP</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
