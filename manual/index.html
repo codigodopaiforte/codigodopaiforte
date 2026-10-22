@@ -389,5 +389,10 @@ footer{background:var(--ink);color:#77756F;font-size:13px;padding:22px 0 96px;}
   addEventListener('scroll',u,{passive:true}); u();
 })();
 </script>
+<script>/* repassa a origem (src) do link de entrada pro checkout da Hotmart; a origem da pagina vai pro sck */
+(function(){try{var s=new URLSearchParams(location.search).get('src');if(!s)return;
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="pay.hotmart.com"]');if(!a)return;
+var u=new URL(a.href);var o=u.searchParams.get('src');if(o&&o!==s)u.searchParams.set('sck',o);u.searchParams.set('src',s);a.href=u.toString();},true);}catch(e){}})();
+</script>
 </body>
 </html>
