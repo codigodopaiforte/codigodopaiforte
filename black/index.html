@@ -190,6 +190,13 @@ footer{border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;paddin
 .bar div s{color:var(--dim);}
 .bar div strong{display:block;font-family:var(--display);font-weight:400;font-size:24px;color:var(--gold);}
 .bar a{flex:1;text-align:center;text-decoration:none;background:var(--gold);color:#000;font-family:var(--display);font-size:15px;text-transform:uppercase;padding:15px 10px;border-radius:10px;}
+.gift{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;text-align:left;background:#1A1405;border:1.5px dashed var(--gold);border-radius:14px;padding:14px 16px;margin-bottom:14px;}
+.gift .gi{font-size:30px;line-height:1;}
+.gift b{display:block;font-size:16px;color:var(--gold2);margin-bottom:2px;}
+.gift p{font-size:14px;color:var(--muted);line-height:1.45;}
+.kit li.gift-li em{font-style:normal;font-weight:900;font-size:12.5px;color:#000;background:var(--gold);padding:3px 7px;border-radius:5px;}
+.kit li.gift-li b{color:var(--gold2);}
+.gift-off [data-gift]{display:none!important;}
 .ended .btn,.ended .bar a{pointer-events:none;opacity:.4;animation:none;}
 </style>
 </head>
@@ -221,6 +228,7 @@ footer{border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;paddin
       <p class="inst">ou 12x de R$10,03 no cartão</p>
       <span class="save">Você economiza R$273</span>
     </div>
+    <div class="gift" data-gift><span class="gi">🎁</span><div><b>De presente: Pai Sem Barriga</b><p>O desafio de 30 dias pra você secar a barriga em casa, com treino de 20 minutos e o Prato do Pai. Só pra quem comprar até 26/11.</p></div></div>
     <a class="btn" data-kit="Kit Pai Forte Completo" data-value="97" href="https://pay.hotmart.com/J108302561H?src=pagina-black">Quero o Kit Completo</a>
     <div class="trust"><span>Acesso na hora</span><span>Garantia de 7 dias</span><span>Pix ou cartão</span></div>
   </div>
@@ -266,6 +274,7 @@ footer{border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;paddin
         <li><span>Meu Filho em Movimento, 4 fases (0 a 4 anos)</span><s>R$148</s></li>
         <li><span>Cartilha de Emergência do Pai</span><s>R$27</s></li>
         <li><span>O Guia do Pai Presente</span><s>R$47</s></li>
+        <li class="gift-li" data-gift><span><b>🎁 Presente: Pai Sem Barriga</b> (até 26/11)</span><em>GRÁTIS</em></li>
       </ul>
       <p class="sum"><span>Valor total separado</span><s>R$370</s></p>
       <div class="pc">
@@ -377,6 +386,7 @@ footer{border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;paddin
 <script>
 (function(){
   var end=new Date('2026-11-30T23:59:59-03:00').getTime();
+  if(Date.now()>new Date('2026-11-26T23:59:59-03:00').getTime()) document.body.classList.add('gift-off');
   var boxes=document.querySelectorAll('[data-cd]');
   function pad(n){return (n<10?'0':'')+n;}
   function tick(){
