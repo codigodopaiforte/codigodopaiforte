@@ -2,9 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="color-scheme" content="light only">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#14171B">
+<meta name="theme-color" content="#0E0F11">
 <title>Pipi, Xixi e Desfralde | Código do Pai Forte</title>
 <meta name="description" content="O guia do pai de menino para cuidar do corpo do filho sem medo de errar. Higiene, desfralde, xixi em pé e proteção do corpo, de 0 a 5 anos. R$27.">
 <meta property="og:title" content="Pipi, Xixi e Desfralde — o guia do pai de menino">
@@ -33,349 +32,224 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1081487534672644&ev=PageView&noscript=1"/></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#14171B;      /* grafite azulado: seções escuras */
-  --ink-2:#1D2126;
-  --paper:#F3F2EF;    /* papel neutro */
-  --card:#FFFFFF;
-  --line:#DCDAD4;
-  --text:#1B1D20;
-  --muted:#686A6F;
-  --brass:#B8893A;    /* latão: o dourado da marca, mais sóbrio */
-  --brass-2:#D4A954;
-  --signal:#B9402B;   /* vermelho de alerta: só dentro dos cartões de emergência */
-  --serif:'Newsreader',Georgia,serif;
+  --bg:#0E0F11;--bg2:#16181B;--bg3:#1E2024;--line:#2C2E33;
+  --text:#F4F2EC;--muted:#A9A69E;--dim:#6E6C67;
+  --gold:#E8B03A;--gold2:#F6C95A;--paper:#F3F1EC;--ink:#14161A;--green:#7FE38A;
+  --display:'Archivo Black','Archivo',system-ui,sans-serif;
   --sans:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Newsreader',Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{background:var(--paper);-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
-body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.55;font-size:16px;}
+html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.55;font-size:16px;overflow-x:hidden;padding-bottom:84px;}
 img{display:block;max-width:100%;}
 a{color:inherit;}
-.wrap{max-width:560px;margin:0 auto;padding:0 22px;}
+.wrap{max-width:580px;margin:0 auto;padding:0 18px;}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
-:focus-visible{outline:2px solid var(--brass-2);outline-offset:3px;}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;}
 
-/* ---------- TOPO ---------- */
-.top{background:var(--ink);color:#EDEBE6;padding:20px 0 34px;overflow:hidden;}
-.brand{display:flex;align-items:center;gap:10px;font-size:13px;color:#A9A7A1;letter-spacing:.2px;margin-bottom:22px;}
-.brand i{display:block;width:18px;height:1px;background:var(--brass);}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,9.6vw,50px);line-height:1.04;letter-spacing:-.6px;color:#F6F4EF;margin-bottom:16px;}
-.lead{font-size:17px;line-height:1.55;color:#B9B7B1;max-width:30em;}
-.lead b{color:#ECEAE4;font-weight:600;}
 
-/* ---------- O PRODUTO: maço de cartões ---------- */
-.deck{position:relative;height:342px;margin:26px -4px 26px;}
-.c{position:absolute;left:50%;width:250px;height:328px;margin-left:-125px;background:var(--card);border-radius:14px;color:var(--text);
-   box-shadow:0 1px 1px rgba(0,0,0,.25),0 10px 24px -6px rgba(0,0,0,.45),0 30px 60px -20px rgba(0,0,0,.55);}
-.c.b3{transform:translate(38px,6px) rotate(7deg);background:#ECEAE5;}
-.c.b2{transform:translate(-36px,10px) rotate(-6deg);background:#F6F5F2;}
-.c.b2 .peek,.c.b3 .peek{position:absolute;top:16px;left:18px;right:18px;font-size:11px;color:#8A8B8E;display:flex;justify-content:space-between;}
-.c.front{padding:18px 18px 16px;display:flex;flex-direction:column;}
-.c .tab{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);margin-bottom:14px;}
-.c .tab span:first-child{display:inline-flex;align-items:center;gap:6px;color:var(--signal);font-weight:600;}
-.c .tab span:first-child::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--signal);}
-.c h3{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.05;letter-spacing:-.3px;margin-bottom:10px;}
-.c dl{display:grid;gap:7px;font-size:11px;line-height:1.38;}
-.c dt{font-weight:700;font-size:10.5px;color:var(--muted);margin-bottom:1px;}
-.c dd{color:#2A2C2F;}
-.c dd.no{color:var(--signal);}
-.c .foot{margin-top:auto;padding-top:10px;border-top:1px solid #ECEBE7;font-size:10px;color:#9A9B9E;display:flex;justify-content:space-between;}
+/* hero */
+.hero{padding:30px 0 34px;background:radial-gradient(120% 70% at 50% 0%,#2B220E 0%,var(--bg) 64%);}
+.brand{font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,10.4vw,56px);line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:16px;}
+.hero h1 span{display:block;color:var(--gold);}
+.hero .lead{font-size:17.5px;color:var(--muted);margin-bottom:22px;max-width:30em;}
+.hero .lead b{color:var(--text);}
+.cover{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;margin-bottom:22px;}
+.book{width:96px;height:128px;border-radius:6px 10px 10px 6px;background:linear-gradient(160deg,#F4E7C8 0%,#E6D2A3 100%);color:#16130D;padding:12px 10px;box-shadow:0 18px 30px -14px rgba(0,0,0,.8),inset -6px 0 0 rgba(0,0,0,.08);transform:rotate(-3deg);display:flex;flex-direction:column;justify-content:space-between;}
+.book b{font-family:var(--serif);font-size:15px;line-height:1.05;font-weight:500;}
+.book i{font-style:normal;font-size:8.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#7A5A16;}
+.cover ul{list-style:none;display:grid;gap:7px;}
+.cover li{font-size:14.5px;font-weight:600;display:flex;gap:8px;}
+.cover li::before{content:'✓';color:var(--gold);font-weight:900;}
 
-/* ---------- PREÇO + BOTÃO ---------- */
-.buy{display:grid;gap:12px;}
-.price{display:flex;align-items:baseline;gap:12px;}
-.price s{font-size:16px;color:#7F7D78;}
-.price strong{font-family:var(--serif);font-weight:500;font-size:46px;line-height:1;color:#F6F4EF;letter-spacing:-.5px;}
-.price small{font-size:13px;color:#9C9A94;}
-.btn{display:block;text-align:center;text-decoration:none;background:var(--brass);color:#16130D;font-weight:700;font-size:17px;padding:18px 20px;border-radius:10px;transition:background .15s;}
-.btn:hover{background:var(--brass-2);}
-.safe{font-size:13px;color:#9C9A94;line-height:1.5;}
-.safe b{color:#D7D5CF;font-weight:600;}
+.deal{background:var(--bg3);border:1px solid #4A3C1C;border-radius:16px;padding:18px 16px;text-align:center;margin-bottom:14px;}
+.deal .to{font-family:var(--display);font-size:clamp(56px,17vw,76px);line-height:1;color:var(--gold);}
+.deal .to sup{font-size:.36em;vertical-align:top;position:relative;top:.38em;margin-right:4px;}
+.deal .inst{font-size:15px;margin-top:4px;}
+.deal .per{display:inline-block;margin-top:10px;background:#1E3A1F;color:var(--green);font-weight:800;font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;padding:6px 10px;border-radius:6px;}
 
-/* ---------- SEÇÕES CLARAS ---------- */
-section{padding:52px 0;}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(27px,7.2vw,36px);line-height:1.12;letter-spacing:-.4px;margin-bottom:14px;}
-.intro{font-size:17px;color:#45474B;max-width:32em;margin-bottom:26px;}
+.btn{display:block;text-align:center;text-decoration:none;background:var(--gold);color:#000;font-family:var(--display);font-size:18px;letter-spacing:.3px;text-transform:uppercase;padding:19px 18px;border-radius:12px;animation:pulse 2.4s infinite;transition:background .15s,transform .15s;}
+.btn:hover{background:var(--gold2);transform:translateY(-1px);}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(232,176,58,.55)}70%{box-shadow:0 0 0 14px rgba(232,176,58,0)}100%{box-shadow:0 0 0 0 rgba(232,176,58,0)}}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:12.5px;color:var(--muted);}
+.trust span::before{content:'✓ ';color:var(--gold);font-weight:800;}
 
-.know{list-style:none;border-top:1px solid var(--line);}
-.know li{padding:16px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:22px 1fr;gap:12px;}
-.know li::before{content:'';width:9px;height:9px;margin-top:8px;border-radius:50%;border:2px solid var(--brass);}
-.know b{display:block;font-size:17px;font-weight:600;line-height:1.35;margin-bottom:3px;}
-.know span{font-size:15px;color:var(--muted);}
+section{padding:54px 0;}
+.kicker{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,8.2vw,40px);line-height:1.04;letter-spacing:-.5px;text-transform:uppercase;margin-bottom:14px;}
+h2 em{font-style:normal;color:var(--gold);}
+.intro{font-size:17px;color:var(--muted);max-width:32em;margin-bottom:24px;}
+.intro b{color:var(--text);}
 
-/* índice do que tem dentro */
-.index{background:var(--card);border-radius:14px;padding:6px 20px;box-shadow:0 1px 2px rgba(20,23,27,.06),0 8px 24px -14px rgba(20,23,27,.25);}
-.index div{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:16px 0;border-bottom:1px solid #EEEDE9;}
-.index div:last-child{border-bottom:0;}
-.index h3{font-size:17px;font-weight:600;}
-.index em{font-style:normal;font-family:var(--serif);font-size:24px;line-height:1;color:var(--brass);grid-row:span 2;align-self:center;}
-.index p{font-size:14.5px;color:var(--muted);line-height:1.45;}
+/* perguntas */
+.qs{display:grid;gap:10px;}
+.qs div{background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:14px 16px;}
+.qs b{display:block;font-size:17px;line-height:1.3;}
+.qs span{font-size:14.5px;color:var(--muted);}
+.after{font-size:17px;margin-top:22px;}
+.after b{color:var(--gold2);}
 
-.extra{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:18px 20px;border:1px dashed #C9B48A;border-radius:14px;background:#FBF8F1;}
-.extra .ic{width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--brass-2);display:flex;align-items:center;justify-content:center;font-size:18px;}
-.extra b{display:block;font-size:16px;margin-bottom:2px;}
-.extra p{font-size:14.5px;color:#55575B;}
+/* frase de impacto */
+.punch{background:var(--gold);color:#000;text-align:center;padding:50px 0;}
+.punch p{font-family:var(--display);font-size:clamp(28px,8.6vw,42px);line-height:1.04;text-transform:uppercase;letter-spacing:-.5px;}
+.punch small{display:block;margin-top:14px;font-size:15px;font-weight:700;color:#3B2C00;}
 
-/* autor */
-.author{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:center;margin-bottom:18px;}
-.author img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 18%;}
+/* trecho */
+.peek{background:var(--paper);color:var(--ink);border-radius:16px;padding:20px 18px;box-shadow:0 30px 50px -30px rgba(0,0,0,.9);transform:rotate(-1deg);}
+.peek .tag{font-size:11.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#8A6416;margin-bottom:6px;}
+.peek h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.1;margin-bottom:12px;}
+.peek ol{list-style:none;counter-reset:r;display:grid;gap:8px;}
+.peek li{counter-increment:r;display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:baseline;font-size:15px;border-top:1px solid #DDD8CD;padding-top:8px;}
+.peek li::before{content:counter(r);font-family:var(--serif);font-size:22px;color:#8A6416;}
+.peek li b{font-weight:800;}
+.peek .foot{font-family:var(--serif);font-style:italic;font-size:15px;text-align:center;margin-top:12px;color:#5A574F;}
+
+/* fases */
+.phases{display:grid;gap:10px;}
+.phases div{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;grid-template-columns:40px 1fr;gap:4px 12px;}
+.phases em{font-style:normal;font-family:var(--display);font-size:30px;color:var(--gold);grid-row:span 2;line-height:1;}
+.phases h3{font-size:17px;font-weight:800;line-height:1.25;}
+.phases p{font-size:14.5px;color:var(--muted);line-height:1.45;}
+.plus{margin-top:12px;border:1px dashed #5A4A22;border-radius:12px;padding:14px 16px;font-size:14.5px;color:var(--muted);}
+.plus b{color:var(--text);}
+
+/* conta */
+.cmp{list-style:none;display:grid;gap:8px;}
+.cmp li{display:flex;justify-content:space-between;gap:12px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-weight:600;font-size:15.5px;}
+.cmp li span:last-child{font-family:var(--display);font-weight:400;white-space:nowrap;color:var(--muted);}
+.cmp li.win{background:var(--gold);color:#000;border-color:var(--gold);}
+.cmp li.win span:last-child{color:#000;}
+
+/* ciência */
+.nums{display:grid;gap:10px;}
+.nums div{display:grid;grid-template-columns:86px 1fr;gap:14px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px;}
+.nums b{font-family:var(--display);font-size:38px;line-height:1;color:var(--gold);}
+.nums span{font-size:14.5px;color:var(--muted);line-height:1.45;}
+
+/* pra quem */
+.fit{display:grid;gap:10px;}
+.fit div{border-radius:12px;padding:16px;}
+.fit .y{background:var(--bg2);border:1px solid var(--line);}
+.fit .n{border:1px solid var(--line);}
+.fit h3{font-size:16px;font-weight:800;margin-bottom:8px;}
+.fit ul{list-style:none;display:grid;gap:6px;font-size:15px;color:var(--muted);}
+.fit .y li::before{content:'✓ ';color:var(--gold);font-weight:900;}
+.fit .n li::before{content:'– ';color:var(--dim);}
+
+.author{display:grid;grid-template-columns:68px 1fr;gap:16px;align-items:center;margin-bottom:18px;}
+.author img{width:68px;height:68px;border-radius:50%;object-fit:cover;object-position:center 18%;border:2px solid var(--gold);}
 .author b{display:block;font-size:17px;}
 .author span{font-size:14px;color:var(--muted);}
-blockquote{font-family:var(--serif);font-size:21px;line-height:1.45;color:#2A2C30;margin-bottom:22px;}
-.photo{border-radius:14px;width:100%;height:220px;object-fit:cover;object-position:center 25%;}
+blockquote{font-family:var(--serif);font-size:23px;line-height:1.38;margin-bottom:14px;}
+.story{font-size:16px;color:var(--muted);}
 
-/* ---------- OFERTA ---------- */
-.offer{background:var(--ink);color:#EDEBE6;}
-.offer h2{color:#F6F4EF;}
-.receipt{list-style:none;margin:22px 0 26px;border-top:1px solid #2C3036;}
-.receipt li{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #2C3036;font-size:15.5px;color:#D2D0CA;}
-.receipt li span:last-child{color:#8F8D87;font-size:14px;white-space:nowrap;}
-.guar{display:grid;grid-template-columns:auto 1fr;gap:14px;margin-top:22px;padding-top:20px;border-top:1px solid #2C3036;font-size:14.5px;color:#A9A7A1;line-height:1.5;}
-.guar .seal{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--brass);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--brass-2);font-family:var(--serif);font-size:20px;line-height:.9;}
-.guar .seal small{font-family:var(--sans);font-size:9px;}
-.guar b{color:#ECEAE4;font-weight:600;}
+/* oferta */
+.offer{background:var(--bg2);border:2px solid var(--gold);border-radius:18px;padding:26px 18px 20px;position:relative;}
+.offer .flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:#000;padding:6px 12px;border-radius:999px;}
+.offer h3{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.05;text-transform:uppercase;text-align:center;margin:4px 0 16px;}
+.offer ul{list-style:none;border-top:1px solid var(--line);margin-bottom:18px;}
+.offer li{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;}
+.offer li::before{content:'✓';color:var(--gold);font-weight:900;}
+.offer .pc{text-align:center;margin-bottom:16px;}
+.offer .pc .now{display:block;font-family:var(--display);font-size:clamp(52px,15vw,66px);line-height:1;color:var(--gold);}
+.offer .pc .now sup{font-size:.36em;vertical-align:top;position:relative;top:.38em;margin-right:4px;}
+.offer .pc .inst{display:block;font-size:14.5px;margin-top:4px;}
 
-/* ---------- FAQ ---------- */
+.guar{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:16px;}
+.guar .seal{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold);font-family:var(--display);font-size:26px;line-height:.9;}
+.guar .seal small{font-family:var(--sans);font-weight:800;font-size:9px;letter-spacing:.5px;}
+.guar b{display:block;font-size:17px;margin-bottom:3px;}
+.guar p{font-size:14.5px;color:var(--muted);}
+
 details{border-bottom:1px solid var(--line);}
 details:first-of-type{border-top:1px solid var(--line);}
-summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;font-size:17px;font-weight:600;position:relative;}
+summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;font-size:16.5px;font-weight:700;position:relative;}
 summary::-webkit-details-marker{display:none;}
-summary::after{content:'';position:absolute;right:4px;top:50%;width:10px;height:10px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-70%) rotate(45deg);transition:transform .2s;}
-details[open] summary::after{transform:translateY(-30%) rotate(-135deg);}
-details p{padding:0 0 18px;font-size:15.5px;color:#4A4C50;max-width:34em;}
+summary::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:400;color:var(--gold);}
+details[open] summary::after{content:'–';}
+details p{padding:0 0 18px;font-size:15.5px;color:var(--muted);}
 
-/* ---------- FINAL ---------- */
-.final{background:var(--ink-2);color:#EDEBE6;padding:54px 0 60px;}
-.final h2{color:#F6F4EF;}
-.final .intro{color:#AEACA6;}
-footer{background:var(--ink);color:#77756F;font-size:13px;padding:22px 0 96px;}
+.final{text-align:center;background:radial-gradient(120% 80% at 50% 100%,#2B220E 0%,var(--bg) 66%);padding:60px 0 66px;}
+.final p.sub{font-size:17px;color:var(--muted);margin:-4px 0 24px;}
+.foot{font-size:12.5px;color:var(--dim);padding:26px 0 30px;border-top:1px solid var(--line);}
 
-/* ---------- BARRA FIXA ---------- */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(20,23,27,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #2C3036;
-     padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:14px;transform:translateY(110%);transition:transform .25s ease;}
+/* barra fixa */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(14,15,17,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s;}
 .bar.on{transform:none;}
-.bar div{color:#B9B7B1;font-size:12px;line-height:1.2;}
-.bar div strong{display:block;font-family:var(--serif);font-weight:500;font-size:22px;color:#F6F4EF;}
-.bar a{flex:1;text-align:center;text-decoration:none;background:var(--brass);color:#16130D;font-weight:700;font-size:16px;padding:14px;border-radius:10px;}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px;}
+.bar small{display:block;font-size:12px;color:var(--muted);}
+.bar b{font-family:var(--display);font-size:22px;color:var(--gold);font-weight:400;}
+.bar a{background:var(--gold);color:#000;text-decoration:none;font-family:var(--display);font-size:14.5px;text-transform:uppercase;padding:13px 16px;border-radius:10px;white-space:nowrap;}
 
-/* entrada única do maço de cartões */
-@keyframes deal{from{opacity:0;transform:translateY(18px);}to{opacity:1;}}
-.deck .front{animation:deal .6s .15s both cubic-bezier(.2,.7,.2,1);}
-
-:root{--calm:#4F6B4A;}
-.c .tab span:first-child{color:var(--calm);}
-.c .tab span:first-child::before{background:var(--calm);}
-.steps-card ol{list-style:none;display:grid;gap:0;margin-top:4px;}
-.steps-card li{display:grid;grid-template-columns:26px 1fr;gap:6px;align-items:baseline;padding:9px 0;border-bottom:1px solid #EFEEEA;}
-.steps-card li:last-child{border-bottom:0;}
-.steps-card li b{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1;color:var(--calm);}
-.steps-card li span{font-size:11px;line-height:1.35;color:#2A2C2F;}
-.steps-card li span{font-size:12px;}
-.steps-card li span strong{display:inline;font-size:14px;color:var(--text);font-weight:700;margin-right:5px;}
-.c .foot.motto{font-family:var(--serif);font-size:13px;color:var(--text);font-style:italic;justify-content:center;}
-.c.b2 .peek2{position:absolute;top:18px;left:18px;font-size:10.5px;color:#8A8B8E;}
-
-/* dados de pesquisa */
-.facts{display:grid;gap:0;border-top:1px solid var(--line);margin-top:8px;}
-.facts div{display:grid;grid-template-columns:92px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline;}
-.facts strong{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1;color:var(--calm);letter-spacing:-.5px;}
-.facts p{font-size:15.5px;color:#3E4044;}
-.facts small{display:block;font-size:12.5px;color:#8A8B8E;margin-top:3px;}
-.rule{font-family:var(--serif);font-size:22px;line-height:1.35;margin-top:22px;padding-left:16px;border-left:2px solid var(--brass);color:#2A2C30;}
-
-/* os 5 passos */
-.method{list-style:none;counter-reset:s;border-top:1px solid var(--line);}
-.method li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);}
-.method li em{font-style:normal;font-family:var(--serif);font-size:30px;line-height:1;color:var(--brass);}
-.method b{display:block;font-size:17px;margin-bottom:3px;}
-.method span{font-size:15px;color:var(--muted);}
-
-/* amostra de roteiro */
-.script{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 1px 2px rgba(20,23,27,.06),0 8px 24px -14px rgba(20,23,27,.25);}
-.script .tab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:10px;}
-.script h3{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.1;margin-bottom:14px;}
-.script dt{font-weight:700;font-size:12.5px;color:var(--muted);margin-bottom:2px;}
-.script dd{font-size:15px;color:#2A2C2F;margin-bottom:12px;}
-.script .say{display:grid;gap:10px;margin-top:4px;padding-top:14px;border-top:1px solid #EEEDE9;}
-.script .say div{font-size:14.5px;line-height:1.45;}
-.script .say b{display:block;font-size:12.5px;margin-bottom:2px;}
-.script .say .yes b{color:var(--calm);} .script .say .no b{color:#9A3B2C;}
-
-/* pra quem é */
-.fit{display:grid;gap:14px;}
-.fit div{background:var(--card);border-radius:14px;padding:18px 20px;}
-.fit h3{font-size:16px;margin-bottom:8px;}
-.fit ul{list-style:none;display:grid;gap:7px;}
-.fit li{font-size:15px;color:#3E4044;padding-left:20px;position:relative;}
-.fit .y li::before{content:'';position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--calm);}
-.fit .n{background:transparent;border:1px solid var(--line);}
-.fit .n li{color:var(--muted);}
-.fit .n li::before{content:'';position:absolute;left:1px;top:11px;width:10px;height:1.5px;background:#A9A7A1;}
-.disc{font-size:12px;color:#77756F;margin-top:8px;}
-
-.c.front.say-card dl{gap:8px;}
-.c.front.say-card dd.q{font-family:var(--serif);font-size:13px;line-height:1.35;color:var(--text);}
-.c.front.say-card h3{font-size:24px;}
-.extra .ic{background:var(--calm);color:#fff;}
-
-.peek{background:var(--ink);color:#EDEBE6;padding:44px 0 40px;overflow:hidden;}
-.peek h2{color:#F6F4EF;margin-bottom:6px;}
-.peek .intro{color:#AEACA6;margin-bottom:0;}
-.top .buy{margin-top:26px;}
-.top .pick{margin-top:26px;}
+/* extras */
+.peek .rows{display:grid;gap:0;}
+.peek .rows div{display:grid;grid-template-columns:96px 1fr;gap:10px;border-top:1px solid #DDD8CD;padding:9px 0;font-size:14.5px;line-height:1.45;}
+.peek .rows b{font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#8A6416;padding-top:2px;}
+.peek .rows .warn b{color:#A8321F;}
+.steps{display:grid;gap:10px;}
+.steps div{display:grid;grid-template-columns:44px 1fr;gap:2px 12px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+.steps em{font-style:normal;font-family:var(--display);font-size:30px;color:var(--gold);grid-row:span 2;line-height:1;}
+.steps b{font-size:17px;}
+.steps span{font-size:14.5px;color:var(--muted);line-height:1.45;}
+.deal .old{font-size:15px;color:var(--muted);margin-bottom:2px;}
+.deal .old s{text-decoration-color:#C7533E;text-decoration-thickness:2px;}
+.offer .pc .old{display:block;font-size:15px;color:var(--muted);}
+.ages{display:grid;gap:14px;}
+.age{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px 16px;scroll-margin-top:16px;}
+.age .t{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.age h3{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.05;text-transform:uppercase;margin-bottom:8px;}
+.age p{font-size:15px;color:var(--muted);margin-bottom:12px;}
+.age ul{list-style:none;display:grid;gap:6px;margin-bottom:14px;}
+.age li{font-size:14.5px;display:flex;gap:8px;}
+.age li::before{content:'✓';color:var(--gold);font-weight:900;}
+.age .row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.age .pr s{display:block;font-size:13px;color:var(--muted);}
+.age .pr b{font-family:var(--display);font-weight:400;font-size:34px;color:var(--gold);line-height:1;}
+.age a{background:var(--gold);color:#000;text-decoration:none;font-family:var(--display);font-size:14px;text-transform:uppercase;padding:13px 14px;border-radius:10px;text-align:center;}
+.pick{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:6px 0 14px;}
+.pick a{text-decoration:none;text-align:center;border:1px solid #4A3C1C;background:var(--bg3);border-radius:10px;padding:10px 2px;font-family:var(--display);font-size:17px;line-height:1;}
+.pick a small{display:block;font-family:var(--sans);font-size:10.5px;color:var(--muted);margin-top:4px;}
 </style>
 </head>
 <body>
+<header class="hero"><div class="wrap">
+<div class="brand">Código do Pai Forte · Pai de Menino</div>
+<h1>Ninguém ensina o pai a cuidar do pipi do filho. <span>Até agora.</span></h1>
+<p class="lead">O guia prático do pai de menino: <b>pipi, higiene, desfralde, xixi em pé e proteção do corpo</b>, de 0 a 5 anos. Direto e sem tabu.</p>
+<div class="cover"><div class="book" aria-hidden="true"><i>Código do Pai Forte</i><b>Pipi, Xixi e Desfralde</b><i>0 a 5 anos</i></div><ul><li>Plano de desfralde de 7 dias</li><li>Passo a passo do xixi em pé</li><li>Sinais de alerta: o que é normal e o que é pronto-socorro</li></ul></div>
 
-<header class="top" id="topo">
-  <div class="wrap">
-    <div class="brand"><i></i>Código do Pai Forte · Pai de Menino</div>
-    <h1>Cuide do corpo do seu filho sem medo de errar.</h1>
-    <p class="lead">O guia prático do pai de menino: <b>pipi, higiene, desfralde, xixi em pé e proteção do corpo</b>, de 0 a 5 anos. Direto e sem tabu.</p>
-
-
-    <div class="buy">
-      <div class="price"><strong>R$27</strong><small>pagamento único</small></div>
-      <a class="btn" href="https://pay.hotmart.com/E107905161I?checkoutMode=10&src=pagina-menino">Quero o guia</a>
-      <p class="safe"><b>Acesso imediato no celular.</b> Garantia de 7 dias. Pix ou cartão, pagamento seguro pela Hotmart.</p>
-    </div>
-  </div>
-</header>
-
-<section>
-  <div class="wrap">
-    <h2>Ninguém ensina o pai a cuidar do pipi do filho.</h2>
-    <p class="intro">Te ensinaram a dar banho, trocar fralda e fazer arrotar. Mas quando as dúvidas de menino aparecem, você fica sozinho, e com vergonha de perguntar.</p>
-    <ul class="know">
-      <li><div><b>A pele do pipi não desce</b><span>É fimose? Precisa puxar?</span></div></li>
-      <li><div><b>Ele tem ereção ainda bebê</b><span>Isso é normal?</span></div></li>
-      <li><div><b>Quando tirar a fralda?</b><span>Por que o filho do vizinho já desfraldou?</span></div></li>
-      <li><div><b>Como ensinar o xixi em pé</b><span>Sem transformar o banheiro num caos?</span></div></li>
-      <li><div><b>Ele vive com a mão no pipi</b><span>Até na frente das visitas. O que eu faço?</span></div></li>
-      <li><div><b>Como proteger meu filho</b><span>Sem assustar?</span></div></li>
-    </ul>
-    <p class="intro" style="margin:22px 0 0">Pesquisar de madrugada só gera mais dúvida: um site diz uma coisa, o parente diz outra, e o “vai abrindo aos poucos” que todo mundo repete pode, na verdade, machucar.</p>
-  </div>
-</section>
-
-<section class="peek">
-  <div class="wrap">
-    <h2>Veja como é por dentro</h2>
-    <p class="intro">Um trecho real do material.</p>
-
-    <div class="deck" aria-label="Trecho do capítulo 1 do guia">
-      <div class="c b3"></div>
-      <div class="c b2"></div>
-      <div class="c front say-card">
-        <div class="tab"><span>Capítulo 1</span><span>O pipi do seu filho</span></div>
-        <h3>Nunca puxe a pele à força</h3>
-        <dl>
-          <div><dt>O que fazer</dt><dd>Lave só por fora, com água morna. Se a pele não volta, deixe como está.</dd></div>
-          <div><dt>Por que</dt><dd>Puxar antes da hora cria rachaduras que podem virar fimose de verdade.</dd></div>
-          <div><dt>Evite</dt><dd class="no">“Exercícios” de puxar a pele, massagem, cotonete por baixo.</dd></div>
-          <div><dt>Pediatra se</dt><dd>Ficar vermelho, inchado, com pus, ou doer pra fazer xixi.</dd></div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <h2>O que tem dentro</h2>
-    <p class="intro">26 páginas, 6 capítulos, na ordem em que você vai precisar.</p>
-    <div class="index">
-      <div><h3>O pipi do seu filho: o que é normal</h3><em>1</em><p>Prepúcio, fimose fisiológica, bolinhas brancas, ereções e testículos que “sobem”. O que é normal e o que pede médico.</p></div>
-      <div><h3>Higiene no dia a dia</h3><em>2</em><p>Troca de fralda de menino passo a passo, banho, assadura, o que nunca usar e como ensinar a se limpar sozinho.</p></div>
-      <div><h3>Desfralde do menino</h3><em>3</em><p>Checklist de prontidão, plano de 7 dias, escapes, regressão, medo do cocô e desfralde noturno.</p></div>
-      <div><h3>Xixi em pé</h3><em>4</em><p>Quando ensinar, o passo a passo, o truque da mira, banheiro público e xixi na rua. Aqui o pai é o professor.</p></div>
-      <div><h3>Quando ele mexe no pipi</h3><em>5</em><p>Por que é comum entre 2 e 5 anos, a frase certa pra dizer, como agir na frente dos outros e os sinais que pedem ajuda.</p></div>
-      <div><h3>Proteção do corpo: o básico</h3><em>6</em><p>Quatro conversas simples que protegem seu filho desde cedo, sem assustar.</p></div>
-    </div>
-    <div class="extra">
-      <div class="ic">✓</div>
-      <div><b>Incluso: checklists de bolso</b><p>Banho, troca, desfralde e xixi em pé pra salvar no celular, e uma página de sinais de alerta: o que pode esperar e o que é pronto-socorro.</p></div>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <h2>Pra quem é</h2>
-    <div class="fit">
-      <div class="y"><h3>É pra você se</h3><ul>
-        <li>Tem um filho menino de 0 a 5 anos</li><li>Quer participar dos cuidados, não só “ajudar”</li><li>Prefere passo a passo a textão</li><li>É mãe criando um menino e quer o olhar de um pai</li></ul></div>
-      <div class="n"><h3>Não é pra você se</h3><ul>
-        <li>Procura diagnóstico ou tratamento: isso é com o pediatra</li><li>Quer teoria acadêmica longa</li><li>Seu filho já passou dos 6 anos</li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="author">
-      <img src="data:image/jpeg;base64,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" alt="Abner Cerpe">
-      <div><b>Abner Cerpe</b><span>Personal trainer e pai do Ravi</span></div>
-    </div>
-    <blockquote>Esse guia é o que eu queria ter recebido no dia em que virei pai de menino.</blockquote>
-    <p class="intro" style="margin:0">Aprendi tudo isso na prática, com o meu filho, e fui atrás das respostas certas. O guia junta a rotina real aqui de casa com as orientações da Sociedade Brasileira de Pediatria, da Academia Americana de Pediatria e de estudos sobre desenvolvimento infantil.</p>
-  </div>
-</section>
-
-<section class="offer">
-  <div class="wrap">
-    <h2>O que você recebe</h2>
-    <ul class="receipt">
-      <li><span>Guia completo, 26 páginas, 6 capítulos</span><span>incluso</span></li>
-      <li><span>Plano de desfralde de 7 dias</span><span>incluso</span></li>
-      <li><span>Passo a passo do xixi em pé</span><span>incluso</span></li>
-      <li><span>Frases prontas pra quando ele mexe no pipi</span><span>incluso</span></li>
-      <li><span>Checklists de bolso pro celular</span><span>incluso</span></li>
-      <li><span>Página de sinais de alerta</span><span>incluso</span></li>
-    </ul>
-    <div class="buy">
-      <div class="price"><strong>R$27</strong><small>menos que um pacote de fraldas, e você usa por anos</small></div>
-      <a class="btn" href="https://pay.hotmart.com/E107905161I?checkoutMode=10&src=pagina-menino">Quero o guia</a>
-      <p class="safe"><b>Acesso imediato no celular.</b> Garantia de 7 dias. Pix ou cartão, pagamento seguro pela Hotmart.</p>
-    </div>
-    <div class="guar"><div class="seal">7<small>dias</small></div><div><b>Garantia incondicional.</b> Leu e não achou que valeu? Peça o reembolso pela própria Hotmart e receba 100% de volta, sem perguntas.</div></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>Perguntas frequentes</h2>
-    <details><summary>O guia substitui o pediatra?</summary><p>Não. Ele é educativo: explica o que é esperado em cada fase e mostra, em todos os capítulos, quando procurar o médico. Na dúvida, o pediatra sempre vem primeiro.</p></details>
-    <details><summary>Para qual idade serve?</summary><p>Para meninos de 0 a 5 anos, do primeiro banho até o xixi em pé e as primeiras conversas sobre proteção do corpo.</p></details>
-    <details><summary>Como eu recebo?</summary><p>Logo após a confirmação do pagamento, você recebe o acesso por e-mail e na área de membros da Hotmart. É só abrir no celular ou no computador.</p></details>
-    <details><summary>Posso imprimir?</summary><p>Pode. O guia é um PDF em A4 e os checklists foram feitos pra colar na parede do banheiro ou salvar no celular.</p></details>
-    <details><summary>Meu filho é circuncidado. Serve pra mim?</summary><p>Serve. O guia tem uma parte específica para o menino circuncidado, e os capítulos de desfralde, xixi em pé, comportamento e proteção valem igualmente.</p></details>
-    <details><summary>Sou mãe. Serve pra mim?</summary><p>Com certeza. Foi escrito com voz de pai, mas vale pra quem cria um menino, inclusive a parte de banheiro público quando você está sozinha com ele.</p></details>
-    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Peça o reembolso pela Hotmart e receba todo o valor de volta.</p></details>
-  </div>
-</section>
-
-<section class="final" id="final">
-  <div class="wrap">
-    <h2>O jeito que você cuida do corpo dele vira o jeito que ele vai cuidar de si mesmo.</h2>
-    <p class="intro">Comece hoje, com calma e com o passo a passo na mão.</p>
-    <a class="btn" href="https://pay.hotmart.com/E107905161I?checkoutMode=10&src=pagina-menino">Quero o guia</a>
-  </div>
-</section>
-
-<footer><div class="wrap">Código do Pai Forte · codigodopaiforte.com.br<p class="disc">Conteúdo educativo, não substitui orientação médica.</p></div></footer>
-
-<div class="bar" id="bar"><div>Pipi, Xixi e Desfralde<strong>R$27</strong></div><a href="https://pay.hotmart.com/E107905161I?checkoutMode=10&src=pagina-menino">Quero o guia</a></div>
-
+<div class="deal"><div class="to"><sup>R$</sup>27</div><div class="inst">pagamento único, no Pix ou cartão</div><span class="per">Menos que um pacote de fraldas</span></div>
+<a class="btn" id="cta1" href="https://pay.hotmart.com/E107905161I?checkoutMode=10&amp;src=pagina-menino">Quero o guia</a>
+<div class="trust"><span>Acesso na hora</span><span>Garantia de 7 dias</span><span>Pix ou cartão</span></div>
+</div></header>
+<section><div class="wrap"><div class="kicker">As dúvidas que ninguém responde</div><h2>Te ensinaram a trocar fralda. <em>E o resto?</em></h2><div class="qs"><div><b>A pele do pipi não desce</b><span>É fimose? Precisa puxar?</span></div><div><b>Ele tem ereção ainda bebê</b><span>Isso é normal?</span></div><div><b>Quando tirar a fralda?</b><span>Por que o filho do vizinho já desfraldou?</span></div><div><b>Como ensinar o xixi em pé</b><span>Sem transformar o banheiro num caos?</span></div><div><b>Ele vive com a mão no pipi</b><span>Até na frente das visitas. O que eu faço?</span></div><div><b>Como proteger meu filho</b><span>Sem assustar?</span></div></div><p class="after">Pesquisar de madrugada só gera mais dúvida. E o “vai abrindo aos poucos” que todo mundo repete <b>pode, na verdade, machucar.</b></p></div></section>
+<div class="punch"><div class="wrap"><p>O jeito que você cuida do corpo dele vira o jeito que ele vai cuidar de si mesmo.</p></div></div>
+<section><div class="wrap"><div class="kicker">Um trecho real</div><h2>Veja como é <em>por dentro.</em></h2><div class="peek"><div class="tag">Capítulo 1 · O pipi do seu filho</div><h3>Nunca puxe a pele à força</h3><div class="rows">
+<div><b>O que fazer</b><span>Lave só por fora, com água morna. Se a pele não volta, deixe como está.</span></div>
+<div><b>Por quê</b><span>Puxar antes da hora cria rachaduras que podem virar fimose de verdade.</span></div>
+<div class="warn"><b>Evite</b><span>“Exercícios” de puxar a pele, massagem, cotonete por baixo.</span></div>
+<div><b>Pediatra se</b><span>Ficar vermelho, inchado, com pus, ou doer pra fazer xixi.</span></div></div></div></div></section>
+<section style="padding-top:10px"><div class="wrap"><div class="kicker">O que tem dentro</div><h2>6 capítulos. <em>Sem tabu.</em></h2><p class="intro">26 páginas, na ordem em que você vai precisar.</p><div class="phases"><div><em>1</em><h3>O pipi do seu filho: o que é normal</h3><p>Prepúcio, fimose fisiológica, bolinhas brancas, ereções e testículos que “sobem”. O que é normal e o que pede médico.</p></div><div><em>2</em><h3>Higiene no dia a dia</h3><p>Troca de fralda de menino passo a passo, banho, assadura, o que nunca usar e como ensinar a se limpar sozinho.</p></div><div><em>3</em><h3>Desfralde do menino</h3><p>Checklist de prontidão, plano de 7 dias, escapes, regressão, medo do cocô e desfralde noturno.</p></div><div><em>4</em><h3>Xixi em pé</h3><p>Quando ensinar, o passo a passo, o truque da mira, banheiro público e xixi na rua. Aqui o pai é o professor.</p></div><div><em>5</em><h3>Quando ele mexe no pipi</h3><p>Por que é comum entre 2 e 5 anos, a frase certa pra dizer, como agir na frente dos outros e os sinais que pedem ajuda.</p></div><div><em>6</em><h3>Proteção do corpo: o básico</h3><p>Quatro conversas simples que protegem seu filho desde cedo, sem assustar.</p></div></div><p class="plus"><b>Inclui:</b> checklists de bolso (banho, troca, desfralde e xixi em pé) e uma página de sinais de alerta.</p></div></section>
+<section style="padding-top:10px"><div class="wrap"><div class="kicker">Pra quem é</div><h2>É pra você?</h2><div class="fit">
+<div class="y"><h3>É pra você se</h3><ul><li>Tem um filho menino de 0 a 5 anos</li><li>Quer participar dos cuidados, não só “ajudar”</li><li>Prefere passo a passo a textão</li><li>É mãe criando um menino e quer o olhar de um pai</li></ul></div><div class="n"><h3>Não é pra você se</h3><ul><li>Procura diagnóstico ou tratamento: isso é com o pediatra</li><li>Quer teoria acadêmica longa</li><li>Seu filho já passou dos 6 anos</li></ul></div></div></div></section>
+<section style="padding-top:10px"><div class="wrap"><div class="author"><img src="data:image/jpeg;base64,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" alt="Abner Cerpe"><div><b>Abner Cerpe</b><span>Personal trainer e pai do Ravi</span></div></div>
+<blockquote>Esse guia é o que eu queria ter recebido no dia em que virei pai de menino.</blockquote><p class="story">Aprendi tudo isso na prática, com o meu filho, e fui atrás das respostas certas: Sociedade Brasileira de Pediatria, Academia Americana de Pediatria e estudos sobre desenvolvimento infantil.</p></div></section>
+<section style="padding-top:20px" id="oferta"><div class="wrap"><div class="offer"><div class="flag">O que você recebe</div><h3>Pipi, Xixi e Desfralde</h3><ul><li>Guia completo, 26 páginas, 6 capítulos</li><li>Plano de desfralde de 7 dias</li><li>Passo a passo do xixi em pé</li><li>Frases prontas pra quando ele mexe no pipi</li><li>Checklists de bolso pro celular</li><li>Página de sinais de alerta</li></ul>
+<div class="pc"><span class="now"><sup>R$</sup>27</span><span class="inst">menos que um pacote de fraldas, e você usa por anos</span></div>
+<a class="btn" href="https://pay.hotmart.com/E107905161I?checkoutMode=10&amp;src=pagina-menino">Quero o guia</a><div class="trust"><span>Acesso na hora</span><span>Pix ou cartão</span></div></div>
+<div class="guar"><div class="seal">7<small>DIAS</small></div><div><b>Risco zero pra você</b><p>Leu e achou que não valeu? Pede o reembolso pela própria Hotmart em até 7 dias e recebe 100% de volta.</p></div></div></div></section>
+<section style="padding-top:10px"><div class="wrap"><div class="kicker">Dúvidas</div><h2>Perguntas <em>frequentes</em></h2><details><summary>O guia substitui o pediatra?</summary><p>Não. Ele é educativo: explica o que é esperado em cada fase e mostra, em todos os capítulos, quando procurar o médico. Na dúvida, o pediatra sempre vem primeiro.</p></details><details><summary>Para qual idade serve?</summary><p>Para meninos de 0 a 5 anos, do primeiro banho até o xixi em pé e as primeiras conversas sobre proteção do corpo.</p></details><details><summary>Meu filho é circuncidado. Serve pra mim?</summary><p>Serve. O guia tem uma parte específica para o menino circuncidado, e os capítulos de desfralde, xixi em pé, comportamento e proteção valem igualmente.</p></details><details><summary>Como eu recebo?</summary><p>Logo após a confirmação do pagamento, você recebe o acesso por e-mail e na área de membros da Hotmart.</p></details><details><summary>Sou mãe. Serve pra mim?</summary><p>Com certeza. Foi escrito com voz de pai, mas vale pra quem cria um menino, inclusive a parte de banheiro público quando você está sozinha com ele.</p></details></div></section>
+<section class="final"><div class="wrap"><h2>Comece hoje, <em>com o passo a passo na mão.</em></h2><p class="sub">Do primeiro banho ao xixi em pé, sem medo de errar.</p>
+<a class="btn" href="https://pay.hotmart.com/E107905161I?checkoutMode=10&amp;src=pagina-menino">Quero o guia · R$27</a><div class="trust"><span>Acesso na hora</span><span>Garantia de 7 dias</span></div></div></section>
+<div class="foot"><div class="wrap">Código do Pai Forte · codigodopaiforte.com.br<br>Conteúdo educativo, não substitui orientação médica.</div></div>
+<div class="bar" id="bar" aria-hidden="true"><div class="wrap"><div><small>Pipi, Xixi e Desfralde</small><b>R$27</b></div><a href="https://pay.hotmart.com/E107905161I?checkoutMode=10&amp;src=pagina-menino" tabindex="-1">Quero o guia</a></div></div>
 <script>
-(function(){
-  var bar=document.getElementById('bar'), top=document.getElementById('topo'), fin=document.getElementById('final');
-  function u(){ var a=top.getBoundingClientRect().bottom<0, b=fin.getBoundingClientRect().top<innerHeight; bar.classList.toggle('on',a&&!b); }
-  addEventListener('scroll',u,{passive:true}); u();
-})();
+(function(){var b=document.getElementById('bar'),c=document.getElementById('cta1');if(!b||!c||!('IntersectionObserver' in window))return;var f=document.querySelector('.final'),past=false,atEnd=false;function u(){b.classList.toggle('on',past&&!atEnd);}new IntersectionObserver(function(e){past=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;u();}).observe(c);if(f)new IntersectionObserver(function(e){atEnd=e[0].isIntersecting;u();}).observe(f);})();
 </script>
 <script>/* repassa a origem (src) do link de entrada pro checkout da Hotmart; a origem da pagina vai pro sck */
 (function(){try{var s=new URLSearchParams(location.search).get('src');if(!s)return;
