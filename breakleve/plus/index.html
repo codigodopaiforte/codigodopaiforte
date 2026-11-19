@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Break Leve Plus · Liga (protótipo)</title>
+<meta name="description" content="Pausas guiadas de 1, 5 e 15 minutos para a rotina de trabalho: postura, dores, respiração, relaxamento e energia. Cuidar de você faz parte do trabalho.">
+<meta name="theme-color" content="#13293D">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Break Leve">
+<meta property="og:title" content="Break Leve Plus | Liga de pausas (demonstração)">
+<meta property="og:description" content="Pausas guiadas de 1, 5 e 15 minutos para a sua rotina de trabalho.">
+<meta property="og:url" content="https://codigodopaiforte.com.br/breakleve/plus/">
+<meta property="og:image" content="https://codigodopaiforte.com.br/img/og-breakleve.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='46' fill='%23FFB020'/%3E%3Ccircle cx='48' cy='29' r='8' fill='%2313293D'/%3E%3Cpath d='M24 22 Q48 64 72 22' fill='none' stroke='%2313293D' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M48 46 L48 76' fill='none' stroke='%2313293D' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Nunito:wght@800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Break Leve · Sol & Menta. Layout: coluna única de celular, cartões grandes para o polegar */
+  --ink:#13293D; --ink-2:#1C3A55; --cream:#FFF8EC; --sun:#FFB020; --sun-soft:#FFC95C; --sun-text:#A86400; --mint:#3DD9A0; --line:#EADFC9; --muted:#5A6B7A;
+  --f-brand:'Space Grotesk', 'Segoe UI', sans-serif; --f-display:'Nunito', 'Segoe UI', sans-serif; --f-body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.app{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
+header.top{background:var(--ink);color:var(--cream);padding:18px 20px 22px;display:flex;flex-direction:column;gap:14px}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-brand);font-size:26px;letter-spacing:-.5px;line-height:1}
+.brand b{font-weight:700}.brand span{color:var(--sun-soft)}
+.company{font-size:13px;color:#B8C7D6;text-align:right;line-height:1.3}
+.company strong{display:block;color:var(--cream);font-weight:600;font-size:14px}
+.anchor{font-family:var(--f-display);font-weight:900;font-size:22px;line-height:1.15;margin:0;text-wrap:balance}
+.anchor em{font-style:normal;color:var(--sun-soft)}
+.streak{display:flex;align-items:center;gap:8px;font-size:13px;color:#DCE6EF}
+.streak .dot{width:8px;height:8px;border-radius:4px;background:var(--mint)}
+main{flex:1;padding:20px 16px 32px;display:flex;flex-direction:column;gap:26px}
+h2.sec{font-family:var(--f-brand);font-size:19px;font-weight:700;margin:0 0 10px;letter-spacing:-.2px}
+.month{background:var(--sun);color:var(--ink);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;border:none;text-align:left;width:100%}
+.month small{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.8px}
+.month .t{font-family:var(--f-display);font-weight:900;font-size:26px;line-height:1.05}
+.month .d{font-size:14px}
+.month .go{align-self:flex-start;background:var(--ink);color:var(--cream);border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.time{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 10px 12px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:96px;border-top:6px solid var(--mint)}
+.time:nth-child(2){border-top-color:var(--sun)}.time:nth-child(3){border-top-color:var(--ink)}
+.time .n{font-family:var(--f-display);font-weight:900;font-size:21px;line-height:1.1}
+.time .m{font-family:var(--f-brand);font-weight:700;color:var(--sun-text);font-size:15px}
+.feels{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.feel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px;text-align:left;font-weight:600;font-size:15px;line-height:1.25;min-height:64px}
+.feel svg{flex:none}
+.libbtn{width:100%;background:transparent;border:2px dashed var(--line);border-radius:16px;padding:14px;font-weight:600;color:var(--muted)}
+footer.foot{padding:18px 16px 28px;text-align:center;font-size:12px;color:var(--muted)}
+/* telas internas */
+.bar{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--ink);color:var(--cream)}
+.back{background:transparent;border:none;color:var(--cream);font-size:15px;font-weight:600;padding:8px 4px;display:flex;align-items:center;gap:6px}
+.bar .ttl{font-family:var(--f-brand);font-weight:700;font-size:17px}
+.list{display:flex;flex-direction:column;gap:12px}
+.combo{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;text-align:left;display:flex;flex-direction:column;gap:6px;width:100%}
+.combo .k{display:flex;gap:8px;align-items:center;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+.pill{border-radius:999px;padding:3px 9px;font-size:12px;font-weight:600;text-transform:none;letter-spacing:0}
+.p-respiro{background:#D7F7EA;color:#11634A}.p-ajuste{background:#FFE9BF;color:#7A4A00}.p-recarga{background:#DCE4EE;color:var(--ink)}.p-mes{background:var(--sun);color:var(--ink)}
+.combo .t{font-family:var(--f-display);font-weight:900;font-size:20px;line-height:1.15}
+.combo .s{font-size:14px;color:var(--muted)}
+.note{background:#fff;border-left:4px solid var(--sun);border-radius:10px;padding:12px 14px;font-size:14px}
+/* player */
+.player{flex:1;display:flex;flex-direction:column;gap:16px;padding:16px 16px 24px}
+.stepinfo{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--muted)}
+.progress{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--mint);width:0;transition:width .3s}
+.video{height:min(44vh,440px);background:var(--ink);border-radius:20px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.video video{height:100%;width:100%;object-fit:contain;display:block}
+.libitem{display:flex;gap:12px;align-items:flex-start}
+.libitem img{width:56px;height:100px;object-fit:cover;border-radius:10px;flex:0 0 56px;background:var(--line)}
+.video .tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.12);color:var(--cream);border-radius:999px;padding:4px 10px;font-size:12px}
+.figure{animation:stretch 2.4s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes stretch{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.06)}}
+@media (prefers-reduced-motion: reduce){.figure{animation:none}.progress i{transition:none}}
+.exname{font-family:var(--f-display);font-weight:900;font-size:28px;line-height:1.1;margin:0;text-wrap:balance}
+.how{margin:0;font-size:16px}
+.dose{font-size:14px;font-weight:600;color:var(--sun-text)}
+.timer{display:flex;align-items:center;justify-content:center;gap:18px}
+.clock{font-family:var(--f-brand);font-weight:700;font-size:44px;font-variant-numeric:tabular-nums;min-width:120px;text-align:center}
+.ctrl{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:10px}
+.btn{border:none;border-radius:16px;padding:16px 10px;font-weight:600;font-size:16px;min-height:56px}
+.btn.main{background:var(--ink);color:var(--cream)}
+.btn.soft{background:#fff;border:1px solid var(--line)}
+.btn.sun{background:var(--sun);color:var(--ink);width:100%}
+.done{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:32px 20px}
+.done h2{font-family:var(--f-display);font-weight:900;font-size:30px;margin:0;line-height:1.1}
+.done p{margin:0;max-width:32ch}
+.search{width:100%;border:1px solid var(--line);border-radius:14px;padding:13px 14px;font:inherit;background:#fff}
+.lib{display:flex;flex-direction:column;gap:8px}
+.libitem{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.libitem .t{font-weight:600}.libitem .s{font-size:13px;color:var(--muted)}
+.libitem p{margin:6px 0 0;font-size:14px}
+.hidden{display:none !important}
+/* ===== Liga Break Leve ===== */
+main.withtabs{padding-bottom:96px}
+.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:6px 8px calc(8px + env(safe-area-inset-bottom));z-index:5}
+.tabs button{background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:600;color:var(--muted);padding:6px}
+.tabs button.on{color:var(--ink)}.tabs button.on svg{color:var(--sun-text)}
+.liga{display:flex;gap:16px;align-items:center;background:var(--ink-2);border:none;border-radius:20px;padding:14px;color:var(--cream);text-align:left;width:100%}
+.ringwrap{position:relative;display:grid;place-items:center}
+.ringtxt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.ringtxt b{font-family:var(--f-brand);font-size:24px}.ringtxt span{font-size:11px;color:#B8C7D6;margin-top:3px}
+.ringwrap.big .ringtxt b{font-size:40px;color:var(--ink)}.ringwrap.big .ringtxt span{color:var(--muted);font-size:13px}
+.ringwrap.big circle:first-child{stroke:var(--line)}
+.ringp{transition:stroke-dashoffset 1s ease}
+.ligainfo{display:flex;flex-direction:column;gap:6px;min-width:0}
+.hi{display:flex;align-items:center;gap:8px;font-size:15px}
+.lv{font-family:var(--f-display);font-weight:900;font-size:19px;color:var(--sun-soft);line-height:1.1}
+.stats{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:#DCE6EF}.stats b{color:#fff;font-size:14px}
+.avpick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.avpick button{background:#fff;border:3px solid transparent;border-radius:50%;padding:3px;display:grid;place-items:center;aspect-ratio:1}
+.avpick button.on{border-color:var(--sun)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-weight:600;font-size:15px}
+.chips button.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.check{display:flex;gap:10px;align-items:center;font-size:15px}.check input{width:20px;height:20px;accent-color:var(--ink)}
+.gbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;font-weight:600;font-size:15px;width:100%}
+.fine{font-size:12.5px;color:var(--muted);margin:0}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--ink);color:var(--cream);padding:12px 16px;border-radius:14px;font-size:14px;max-width:340px;opacity:0;transition:.3s;z-index:9;text-align:center}
+.toast.in{opacity:1;transform:translate(-50%,0)}
+.prize{display:flex;gap:12px;align-items:flex-start;background:var(--sun);border-radius:18px;padding:14px}
+.prize b{display:block;font-family:var(--f-display);font-weight:900;font-size:18px}.prize span{font-size:13.5px}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px}
+.seg button{border:none;background:none;border-radius:10px;padding:10px;font-weight:600;font-size:14px;color:var(--muted)}
+.seg button.on{background:var(--ink);color:var(--cream)}
+.srow,.prow{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.srow.mine,.prow.mine{border:2px solid var(--sun);background:#FFFBF2}
+.pos{font-family:var(--f-brand);font-weight:700;font-size:18px;min-width:30px;text-align:center}
+.sbody,.pbody{flex:1;min-width:0}
+.sname,.pname{font-weight:600;font-size:15.5px}
+.smeta{font-size:12.5px;color:var(--muted)}
+.sbar{height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:6px 0 4px}.sbar.big{height:12px;margin-top:10px}
+.sbar i{display:block;height:100%;background:var(--mint);border-radius:5px}
+.ppts{text-align:right;line-height:1}.ppts b{font-family:var(--f-brand);font-size:22px;display:block}.ppts span{font-size:11px;color:var(--muted)}
+.rules{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:14px}
+.rules summary{font-weight:600;cursor:pointer}.rules ul{margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.me{display:flex;gap:14px;align-items:center}
+.mename{font-family:var(--f-display);font-weight:900;font-size:26px;line-height:1.1}
+.lvl{display:inline-block;margin-top:6px;background:var(--ink);color:var(--sun-soft);border-radius:999px;padding:4px 12px;font-weight:600;font-size:13px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.week{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px;margin-top:12px}
+.week>div{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;color:var(--muted)}
+.wcol{height:90px;width:100%;max-width:34px;background:var(--cream);border-radius:8px;display:flex;align-items:flex-end;overflow:hidden}
+.wcol i{display:block;width:100%;background:var(--mint);border-radius:8px}
+.week small{font-weight:600;color:var(--ink);min-height:14px}
+.badges{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.badge{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.badge b{font-size:14px}.badge span{font-size:12px;color:var(--muted)}
+.badge.off{opacity:.42;filter:grayscale(1)}
+.card .row .smeta{white-space:nowrap}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpis div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.kpis b{font-family:var(--f-brand);font-size:26px;line-height:1}.kpis span{font-size:12.5px;color:var(--muted)}
+.climb{display:flex;gap:10px;width:100%;max-width:340px}
+.climb div{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 6px;display:flex;flex-direction:column;align-items:center}
+.climb b{font-family:var(--f-brand);font-size:22px}.climb span{font-size:12px;color:var(--muted)}.climb em{font-style:normal;color:#11634A;font-weight:700}
+.newbadge{display:flex;gap:10px;align-items:center;background:var(--ink);color:var(--cream);border-radius:16px;padding:10px 16px;text-align:left;animation:pop .5s ease}
+.newbadge small{display:block;color:var(--sun-soft);font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+@keyframes pop{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
+.skip{background:none;border:1px dashed var(--line);border-radius:12px;padding:10px;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion: reduce){.ringp,.toast{transition:none}.newbadge{animation:none}}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+
+<script>
+// Nome da empresa vem do link: /breakleve/?empresa=Nome%20da%20Empresa
+const EMPRESA = (()=>{ try{ const n=new URLSearchParams(location.search).get("empresa"); return n ? n.replace(/[<>&"]/g,"").slice(0,40) : "Confecção Exemplo"; }catch(e){ return "Confecção Exemplo"; } })();
+const MES = { nome: "Novembro", tema: "Força que protege", desc: "Fortalecimento geral para proteger costas, ombros e joelhos.", combo: "mes-ajuste" };
+
+const CATS = {
+  pescoco: "Pescoço e ombros", costas: "Costas e postura", punhos: "Punhos e mãos",
+  pernas: "Pernas e joelhos", estresse: "Estresse e tensão", cansaco: "Cansaço e sono"
+};
+
+const EX = {
+  elevacao:{n:"Elevação lateral dos braços",r:"Pescoço e ombros",how:"Em pé, braços um pouco à frente do corpo. Suba até a altura dos ombros e desça devagar.",dose:"Uma série até cansar leve"},
+  w:{n:"Abertura em W",r:"Pescoço e ombros",how:"Braços em W ao lado do corpo. Aperte as escápulas uma na outra e segure.",dose:"10 x 5 segundos"},
+  queixo:{n:"Recolher o queixo",r:"Pescoço e ombros",how:"Olhando para frente, puxe o queixo para trás, como uma papada, sem baixar a cabeça.",dose:"10 x 3 segundos"},
+  rolar:{n:"Rolar os ombros",r:"Pescoço e ombros",how:"Suba os ombros até as orelhas, leve para trás e solte.",dose:"10 vezes"},
+  orelha:{n:"Orelha no ombro",r:"Pescoço e ombros",how:"Incline a cabeça para o lado. A mão do outro lado desce em direção ao chão. Troque de lado na metade.",dose:"20 a 30 segundos cada lado"},
+  axila:{n:"Olhar para a axila",r:"Pescoço e ombros",how:"Gire a cabeça um pouco e olhe para baixo, em direção à axila. A mão apoia de leve na nuca. Troque de lado na metade.",dose:"20 a 30 segundos cada lado"},
+  peito:{n:"Peito na parede",r:"Pescoço e ombros",how:"Antebraço apoiado na parede ou no batente. Gire o corpo para o lado oposto. Troque de lado na metade.",dose:"20 a 30 segundos cada lado"},
+  extensao:{n:"Extensão em pé",r:"Costas",how:"Mãos na lombar. Leve o quadril para frente e o peito para cima, olhando um pouco para o alto.",dose:"5 a 10 x 2 segundos"},
+  gato:{n:"Gato e vaca sentado",r:"Costas",how:"Mãos nos joelhos. Arredonde as costas soltando o ar, depois abra o peito puxando o ar.",dose:"8 vezes"},
+  rotacao:{n:"Rotação do tronco",r:"Costas",how:"Braços cruzados no peito. Gire para um lado e para o outro sem mexer o quadril.",dose:"8 vezes cada lado"},
+  inclinacao:{n:"Inclinação lateral",r:"Costas",how:"Em pé, um braço para cima. Incline o tronco para o lado oposto. Troque de lado na metade.",dose:"20 a 30 segundos cada lado"},
+  abdomen:{n:"Ativação do abdômen",r:"Costas",how:"Puxe o umbigo para dentro e segure, respirando normalmente.",dose:"5 x 10 segundos"},
+  cadeira:{n:"Agachamento na cadeira",r:"Costas e pernas",how:"Sente e levante da cadeira sem usar as mãos, devagar, com a coluna reta.",dose:"10 vezes"},
+  cadeirinha:{n:"Cadeirinha na parede",r:"Costas e pernas",how:"Costas encostadas na parede. Deslize até os joelhos dobrarem um pouco e segure.",dose:"3 x 20 segundos"},
+  tendoes:{n:"Deslizamento dos tendões",r:"Punhos e mãos",how:"Mão aberta, gancho, punho fechado, mão reta e aberta de novo. Segure 3 segundos em cada posição.",dose:"5 ciclos"},
+  abrirmao:{n:"Abrir e fechar a mão",r:"Punhos e mãos",how:"Feche bem a mão e abra esticando os dedos ao máximo.",dose:"10 vezes"},
+  flexores:{n:"Alongar os flexores",r:"Punhos e mãos",how:"Braço esticado, palma para frente. A outra mão puxa os dedos para trás. Troque de mão na metade.",dose:"20 a 30 segundos cada mão"},
+  extensores:{n:"Alongar os extensores",r:"Punhos e mãos",how:"Braço esticado, palma para baixo. A outra mão dobra o punho para baixo. Troque de mão na metade.",dose:"20 a 30 segundos cada mão"},
+  giro:{n:"Giro de punhos",r:"Punhos e mãos",how:"Mãos soltas. Desenhe círculos com os punhos para os dois lados.",dose:"10 vezes cada lado"},
+  polegar:{n:"Polegar ao dedo",r:"Punhos e mãos",how:"Toque a ponta do polegar em cada dedo, ida e volta.",dose:"3 vezes"},
+  massagem:{n:"Automassagem do antebraço",r:"Punhos e mãos",how:"Com o polegar, aperte e deslize pela parte de dentro do antebraço. Troque de braço na metade.",dose:"30 segundos cada braço"},
+  pontapes:{n:"Ponta dos pés",r:"Pernas",how:"Em pé, apoiado na mesa. Suba na ponta dos pés e desça devagar.",dose:"15 a 20 vezes"},
+  tornozelo:{n:"Bomba de tornozelo",r:"Pernas",how:"Sentado, puxe a ponta dos pés para cima e empurre para baixo.",dose:"20 vezes"},
+  marcha:{n:"Marcha parada",r:"Pernas",how:"Suba os joelhos alternando, no lugar.",dose:"30 segundos"},
+  joelho:{n:"Extensão do joelho sentado",r:"Joelhos",how:"Estique uma perna até ficar reta, segure e desça. Troque de perna na metade.",dose:"10 x 3 segundos cada perna"},
+  agachamento:{n:"Agachamento parcial",r:"Pernas e joelhos",how:"Pés na largura do quadril. Desça um pouco como se fosse sentar, joelhos alinhados com os pés.",dose:"10 vezes"},
+  panturrilha:{n:"Alongar a panturrilha",r:"Pernas",how:"Um pé à frente, o de trás esticado com o calcanhar no chão, apoiado na parede. Troque de perna na metade.",dose:"20 a 30 segundos cada perna"},
+  coxa:{n:"Alongar a coxa",r:"Pernas",how:"Em pé, segure o pé atrás, joelhos juntos, apoiado na mesa. Troque de perna na metade.",dose:"20 a 30 segundos cada perna"},
+  suspiro:{n:"Suspiro cíclico",r:"Respiração",how:"Puxe o ar pelo nariz, puxe mais um pouquinho em cima e solte tudo devagar pela boca.",dose:"Repita no seu ritmo"},
+  quadrada:{n:"Respiração quadrada",r:"Respiração",how:"Puxe o ar em 4 segundos, segure 4, solte em 4, segure 4. Se sentir tontura, use 3.",dose:"Repita no seu ritmo"},
+  abdominal:{n:"Respiração abdominal",r:"Respiração",how:"Mão na barriga. O ar entra e a barriga sobe; o peito quase não mexe.",dose:"Respire devagar"},
+  contrai:{n:"Contrai e solta",r:"Relaxamento",how:"Aperte forte as mãos, os ombros e o rosto por 5 segundos e solte de uma vez.",dose:"3 a 5 vezes"},
+  olhos:{n:"Pausa dos olhos",r:"Relaxamento",how:"Olhe para algo longe e pisque devagar.",dose:"20 a 30 segundos"},
+  ativacao:{n:"Ativação rápida",r:"Energia",how:"Marcha no lugar com os braços balançando. No fim, 3 respirações fundas pelo nariz.",dose:"Até o fim do tempo"}
+};
+
+const COMBOS = [
+  {id:"r-pescoco",k:"respiro",c:"pescoco",t:"Solta o pescoço",s:[["rolar",20],["queixo",20],["orelha",20]]},
+  {id:"r-costas",k:"respiro",c:"costas",t:"Endireita a coluna",s:[["extensao",30],["rotacao",30]]},
+  {id:"r-punhos",k:"respiro",c:"punhos",t:"Mãos leves",s:[["tendoes",40],["abrirmao",20]]},
+  {id:"r-pernas",k:"respiro",c:"pernas",t:"Acorda as pernas",s:[["pontapes",30],["tornozelo",30]]},
+  {id:"r-estresse",k:"respiro",c:"estresse",t:"Respira e solta",s:[["suspiro",45],["olhos",15]]},
+  {id:"r-cansaco",k:"respiro",c:"cansaco",t:"Liga o corpo",s:[["ativacao",60]]},
+  {id:"a-pescoco",k:"ajuste",c:"pescoco",t:"Ombros e pescoço em dia",s:[["elevacao",120],["w",45],["orelha",45],["axila",45],["peito",45]]},
+  {id:"a-costas",k:"ajuste",c:"costas",t:"Coluna em ordem",s:[["gato",60],["rotacao",45],["inclinacao",60],["abdomen",60],["cadeira",75]]},
+  {id:"a-punhos",k:"ajuste",c:"punhos",t:"Cuidado das mãos",s:[["tendoes",75],["giro",30],["flexores",60],["extensores",60],["polegar",30],["massagem",45]]},
+  {id:"a-pernas",k:"ajuste",c:"pernas",t:"Pernas firmes",s:[["marcha",45],["pontapes",45],["agachamento",60],["joelho",60],["panturrilha",45],["coxa",45]]},
+  {id:"a-estresse",k:"ajuste",c:"estresse",t:"Desacelera",s:[["abdominal",90],["contrai",60],["suspiro",150]]},
+  {id:"a-cansaco",k:"ajuste",c:"cansaco",t:"Recupera o ritmo",s:[["marcha",60],["pontapes",45],["rolar",30],["agachamento",60],["quadrada",105]]},
+  {id:"rc-costureira",k:"recarga",c:"pescoco punhos costas",t:"Recarga Costureira",s:[["rolar",45],["queixo",45],["elevacao",120],["w",60],["orelha",60],["axila",60],["tendoes",90],["flexores",60],["extensores",60],["massagem",60],["gato",60],["rotacao",60],["suspiro",120]]},
+  {id:"rc-corpo",k:"recarga",c:"pernas cansaco costas",t:"Recarga Corpo Inteiro",s:[["marcha",60],["rolar",45],["elevacao",90],["peito",60],["extensao",45],["inclinacao",60],["abdomen",60],["cadeira",75],["pontapes",60],["panturrilha",60],["coxa",60],["giro",45],["abrirmao",30],["suspiro",150]]},
+  {id:"rc-relax",k:"recarga",c:"estresse",t:"Recarga Relax",s:[["abdominal",120],["orelha",60],["axila",60],["gato",60],["inclinacao",60],["massagem",60],["contrai",120],["olhos",60],["suspiro",300]]},
+  {id:"mes-ajuste",k:"mes",c:"",t:"Ajuste do mês: Força que protege",s:[["cadeira",75],["elevacao",90],["w",45],["cadeirinha",45],["abdomen",45]]}
+];
+
+const KIND = {respiro:["Respiro","1 min","p-respiro"],ajuste:["Ajuste","5 min","p-ajuste"],recarga:["Recarga","15 min","p-recarga"],mes:["Do mês","5 min","p-mes"]};
+
+const ICON = {
+  pescoco:'<circle cx="16" cy="9" r="5"/><path d="M5 27c1-6 5-9 11-9s10 3 11 9"/>',
+  costas:'<path d="M16 3v26"/><path d="M11 7h10M10 12h12M10 17h12M11 22h10"/>',
+  punhos:'<path d="M9 29v-9l-3-6c-1-2 2-3 3-1l3 5V6c0-2 3-2 3 0v8-10c0-2 3-2 3 0v10-8c0-2 3-2 3 0v9-6c0-2 3-2 3 0v11c0 4-2 6-4 8v2"/>',
+  pernas:'<path d="M12 3v11l-2 15M20 3v11l2 15M10 29h4M18 29h4"/>',
+  estresse:'<path d="M3 12c4-4 6 4 10 0s6-4 10 0 4 0 6-2M3 20c4-4 6 4 10 0s6-4 10 0 4 0 6-2"/>',
+  cansaco:'<path d="M18 3 7 18h8l-2 11 12-16h-8z"/>'
+};
+function icon(c){return `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#13293D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[c]}</svg>`}
+const LOGO = s => `<svg width="${s}" height="${s}" viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="46" fill="#FFB020"/><circle cx="48" cy="29" r="8" fill="#13293D"/><path d="M24 22 Q48 64 72 22" fill="none" stroke="#13293D" stroke-width="7" stroke-linecap="round"/><path d="M48 46 L48 76" fill="none" stroke="#13293D" stroke-width="7" stroke-linecap="round"/></svg>`;
+
+const app = document.getElementById("app");
+const total = c => c.s.reduce((a,x)=>a+x[1],0);
+const fmt = s => `${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
+const mins = c => { const t = total(c); return t < 90 ? "1 min" : Math.round(t/60) + " min"; };
+
+let timer = null;
+function stopTimer(){ if(timer){clearInterval(timer); timer=null;} }
+
+/* ================= LIGA BREAK LEVE (protótipo · dados fictícios) ================= */
+const SETORES = ["Costura","Corte","Acabamento","Expedição","Escritório"];
+const ADESAO = {Costura:71, Corte:58, Acabamento:64, "Expedição":49, "Escritório":66};
+const CAP_DIA = 20, BONUS_3D = 10, META_SEM = 15;
+const NIVEIS = [[0,"Começo"],[30,"Ritmo"],[90,"Constante"],[200,"Firme"],[400,"Exemplo"],[800,"Inspiração"]];
+const PREMIO = {setor:"Café da manhã para o setor campeão de novembro", sorteio:"Sorteio semanal de um kit garrafinha + toalha entre quem bater a meta"};
+
+/* avatares ilustrados (personagens fictícios) */
+const SKIN = ["#F2C9A5","#E0A97E","#C68642","#8D5524","#F6D7BD","#A86B3C"];
+function avatar(a, size){
+  const hair = {
+    curto:`<path d="M19 27c0-10 6-15 13-15s13 5 13 15c-3-5-7-7-13-7s-10 2-13 7z" fill="${a.hc}"/>`,
+    longo:`<path d="M18 27c0-11 6-16 14-16s14 5 14 16v15c-3 0-5-3-5-6v-9c-2-4-5-6-9-6s-7 2-9 6v9c0 3-2 6-5 6z" fill="${a.hc}"/>`,
+    coque:`<circle cx="32" cy="10" r="6" fill="${a.hc}"/><path d="M19 27c0-10 6-15 13-15s13 5 13 15c-3-5-7-7-13-7s-10 2-13 7z" fill="${a.hc}"/>`,
+    cacheado:[[20,23],[24,16],[32,13],[40,16],[44,23],[28,14],[36,14]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="6" fill="${a.hc}"/>`).join(""),
+    careca:`<path d="M20 25c1-7 6-11 12-11s11 4 12 11c-3-3-7-4-12-4s-9 1-12 4z" fill="${a.skin}" opacity=".0"/>`,
+    bone:`<path d="M18 24c0-9 6-13 14-13s14 4 14 13z" fill="${a.hc}"/><path d="M30 23h20c0 3-2 4-5 4H30z" fill="${a.hc}"/>`
+  }[a.h];
+  const glasses = a.g ? `<g fill="none" stroke="#13293D" stroke-width="1.6"><circle cx="27" cy="29" r="4"/><circle cx="37" cy="29" r="4"/><path d="M31 29h2"/></g>` : "";
+  return `<svg width="${size}" height="${size}" viewBox="0 0 64 64" aria-hidden="true" style="flex:none;border-radius:50%">
+    <circle cx="32" cy="32" r="32" fill="${a.bg}"/>
+    <path d="M10 64c2-12 11-18 22-18s20 6 22 18z" fill="${a.shirt||"#13293D"}"/>
+    <rect x="28" y="38" width="8" height="9" rx="3" fill="${a.skin}"/>
+    <circle cx="32" cy="29" r="13" fill="${a.skin}"/>
+    ${hair}
+    <circle cx="27" cy="29.5" r="1.6" fill="#13293D"/><circle cx="37" cy="29.5" r="1.6" fill="#13293D"/>
+    <path d="M28 34.5q4 3 8 0" fill="none" stroke="#13293D" stroke-width="1.6" stroke-linecap="round"/>
+    ${glasses}
+  </svg>`;
+}
+const A = (bg,skin,h,hc,g,shirt) => ({bg,skin:SKIN[skin],h,hc,g,shirt});
+const GENTE = [
+  {nick:"Cida",      nome:"Maria Aparecida", s:"Costura",    pts:46, min:612, av:A("#FFE9BF",0,"coque","#8A8A8A",true,"#3DD9A0")},
+  {nick:"Marcão",    nome:"Marcos",          s:"Corte",      pts:43, min:540, av:A("#D7F7EA",3,"careca","#000",false,"#13293D")},
+  {nick:"Jô",        nome:"Joana",           s:"Costura",    pts:41, min:488, av:A("#DCE4EE",2,"cacheado","#2B1B12",false,"#FFB020")},
+  {nick:"Tati",      nome:"Tatiane",         s:"Acabamento", pts:38, min:402, av:A("#FFE0E6",4,"longo","#6B3E1F",false,"#13293D")},
+  {nick:"Rose",      nome:"Rosângela",       s:"Costura",    pts:35, min:377, av:A("#FFF1C9",1,"curto","#3B2416",true,"#E8505B")},
+  {nick:"Giba",      nome:"Gilberto",        s:"Expedição",  pts:31, min:290, av:A("#D7F7EA",1,"bone","#13293D",false,"#3DD9A0")},
+  {nick:"Fê",        nome:"Fernanda",        s:"Escritório", pts:29, min:265, av:A("#E6E1FF",5,"cacheado","#1A120D",false,"#13293D")},
+  {nick:"Paulinho",  nome:"Paulo",           s:"Corte",      pts:26, min:233, av:A("#FFE9BF",0,"curto","#C9A066",false,"#13293D")},
+  {nick:"Neide",     nome:"Claudineide",     s:"Acabamento", pts:24, min:198, av:A("#DCE4EE",3,"coque","#1A120D",false,"#FFB020")},
+  {nick:"Ed",        nome:"Edson",           s:"Expedição",  pts:21, min:176, av:A("#FFE0E6",2,"curto","#1A120D",true,"#13293D")},
+  {nick:"Bruna",     nome:"Bruna",           s:"Costura",    pts:18, min:141, av:A("#E6E1FF",4,"longo","#E2B34A",false,"#3DD9A0")},
+  {nick:"Rafa",      nome:"Rafael",          s:"Escritório", pts:15, min:122, av:A("#FFF1C9",1,"cacheado","#3B2416",false,"#E8505B")},
+  {nick:"Si",        nome:"Simone",          s:"Corte",      pts:12, min:96,  av:A("#D7F7EA",0,"longo","#7A4A22",true,"#13293D")},
+  {nick:"Valdir",    nome:"Valdir",          s:"Expedição",  pts:9,  min:71,  av:A("#DCE4EE",5,"careca","#000",false,"#FFB020")},
+  {nick:"Kátia",     nome:"Kátia",           s:"Acabamento", pts:7,  min:44,  av:A("#FFE9BF",2,"curto","#1A120D",false,"#13293D")},
+  {nick:"Lu",        nome:"Lúcia",           s:"Escritório", pts:5,  min:31,  av:A("#FFE0E6",0,"coque","#C9A066",false,"#3DD9A0")}
+];
+const ESCOLHAS = [
+  A("#FFE9BF",1,"curto","#3B2416",false,"#13293D"), A("#D7F7EA",3,"careca","#000",false,"#3DD9A0"),
+  A("#DCE4EE",0,"longo","#7A4A22",false,"#FFB020"), A("#FFE0E6",2,"cacheado","#1A120D",false,"#13293D"),
+  A("#E6E1FF",4,"coque","#3B2416",true,"#E8505B"), A("#FFF1C9",5,"bone","#E8505B",false,"#13293D"),
+  A("#D7F7EA",1,"longo","#1A120D",true,"#13293D"), A("#DCE4EE",2,"curto","#1A120D",true,"#3DD9A0")
+];
+
+/* estado local (no app final isso fica no servidor) */
+let S;
+function load(){
+  try{ S = JSON.parse(localStorage.getItem("bl_liga")||"null"); }catch(e){ S = null; }
+  if(!S) S = {me:null, log:[], prevMin:38, streak:2, google:false, show:true};
+}
+function save(){ try{ localStorage.setItem("bl_liga", JSON.stringify(S)); }catch(e){} }
+load();
+
+function weekStart(){ const d=new Date(); const day=(d.getDay()+6)%7; d.setHours(0,0,0,0); d.setDate(d.getDate()-day); return d.getTime(); }
+const dayKey = t => { const d=new Date(t); return d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate(); };
+function myWeek(log){
+  log = log || S.log;
+  const ws = weekStart(), per = {};
+  log.filter(e=>e.t>=ws).forEach(e=>{ const k=dayKey(e.t); per[k]=(per[k]||0)+e.min; });
+  const days = Object.keys(per).length;
+  const counted = Object.values(per).reduce((a,m)=>a+Math.min(m,CAP_DIA),0);
+  return {per, days, min:counted, pts: counted + (days>=3?BONUS_3D:0)};
+}
+const totalMin = () => S.prevMin + S.log.reduce((a,e)=>a+e.min,0);
+function nivel(m){
+  let i=0; NIVEIS.forEach((n,j)=>{ if(m>=n[0]) i=j; });
+  const next = NIVEIS[i+1];
+  return {n:i+1, nome:NIVEIS[i][1], prox: next ? next[0] : null, base:NIVEIS[i][0], proxNome: next ? next[1] : null};
+}
+function players(log){
+  const list = GENTE.map(p=>({...p}));
+  if(S.me && S.show) list.push({nick:S.me.nick, s:S.me.s, pts:myWeek(log).pts, av:S.me.av, me:true});
+  return list.sort((a,b)=>b.pts-a.pts);
+}
+function myRank(log){ const l=players(log); const i=l.findIndex(p=>p.me); return i<0?null:i+1; }
+function setores(log){
+  const all = GENTE.map(p=>({...p}));
+  if(S.me) all.push({s:S.me.s, pts:myWeek(log).pts, me:true});
+  return SETORES.map(s=>{ const m=all.filter(p=>p.s===s); return {s, avg: Math.round(m.reduce((a,p)=>a+p.pts,0)/m.length), n:m.length, mine: S.me && S.me.s===s, ades: ADESAO[s]}; })
+    .sort((a,b)=>b.avg-a.avg);
+}
+const CONQ = [
+  ["primeira","Primeira pausa","Fez a primeira pausa na Liga", ()=>S.log.length>=1],
+  ["tres","3 dias na semana","Garantiu o bônus de constância", ()=>myWeek().days>=3],
+  ["cinco","Semana completa","Pausa em 5 dias da semana", ()=>myWeek().days>=5],
+  ["hora","1 hora de cuidado","60 minutos acumulados", ()=>totalMin()>=60],
+  ["mes","Tema do mês","Fez o Ajuste do mês", ()=>S.log.some(e=>e.c==="mes-ajuste")],
+  ["recarga","Recarga completa","Fez uma Recarga de 15 min", ()=>S.log.some(e=>e.k==="recarga")],
+  ["corpo","Corpo inteiro","Pausas de 4 regiões diferentes", ()=>new Set(S.log.flatMap(e=>(e.cat||"").split(" ").filter(Boolean))).size>=4],
+  ["sequencia","3 semanas seguidas","Sequência de semanas com pausa", ()=>S.streak + (myWeek().days?1:0) >= 3]
+];
+const earned = () => CONQ.filter(c=>c[3]()).map(c=>c[0]);
+const MEDAL = `<svg width="32" height="32" style="flex:none" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 3h4l2 7 2-7h4l-4 10h-4z" fill="#3DD9A0"/><circle cx="16" cy="20" r="9" fill="#FFB020"/><path d="m16 15 1.6 3.3 3.6.5-2.6 2.5.6 3.6-3.2-1.7-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z" fill="#13293D"/></svg>`;
+
+function ring(val, max, size, stroke){
+  const r=(size-stroke)/2, c=2*Math.PI*r, p=Math.min(val/max,1);
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true" style="flex:none">
+    <circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="${stroke}"/>
+    <circle class="ringp" cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="#3DD9A0" stroke-width="${stroke}" stroke-linecap="round"
+      stroke-dasharray="${c}" stroke-dashoffset="${c*(1-p)}" transform="rotate(-90 ${size/2} ${size/2})"/></svg>`;
+}
+
+function tabs(active){
+  const T = [["inicio","Início",'<path d="M4 14 16 4l12 10v13H19v-8h-6v8H4z"/>'],
+             ["liga","Liga",'<path d="M9 4h14v6a7 7 0 0 1-14 0zM9 6H4c0 4 2 6 5 6M23 6h5c0 4-2 6-5 6M16 17v5M11 28h10M13 22h6v6h-6z"/>'],
+             ["eu","Eu",'<circle cx="16" cy="11" r="6"/><path d="M5 29c1-7 5-10 11-10s10 3 11 10"/>']];
+  return `<nav class="tabs">${T.map(([k,l,p])=>`<button data-tab="${k}" class="${k===active?"on":""}" aria-label="${l}"><svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">${p}</svg>${l}</button>`).join("")}</nav>`;
+}
+function bindTabs(){ document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>({inicio:home,liga:liga,eu:perfil})[b.dataset.tab]()); }
+
+/* ---------- entrada pela primeira vez (veio do QR) ---------- */
+function onboarding(){
+  stopTimer();
+  let pick = 0, setor = null;
+  app.innerHTML = `
+  <header class="top">
+    <div class="brandrow"><div class="brand">${LOGO(36)}<div><b>break</b><span>leve</span></div></div>
+      <div class="company">Programa de pausas<strong>${EMPRESA}</strong></div></div>
+    <p class="anchor">Bem-vindo à <em>Liga Break Leve.</em></p>
+    <p style="margin:0;color:#DCE6EF;font-size:14px">Faça pausas, some minutos e ajude o seu setor a ganhar a Copa do mês.</p>
+  </header>
+  <main>
+    <section><h2 class="sec">Escolha seu avatar</h2>
+      <div class="avpick">${ESCOLHAS.map((a,i)=>`<button data-i="${i}" class="${i===0?"on":""}" aria-label="Avatar ${i+1}">${avatar(a,58)}</button>`).join("")}</div></section>
+    <section><h2 class="sec">Como quer ser chamado?</h2>
+      <input id="nick" class="search" maxlength="16" placeholder="Seu apelido (ex.: Abner)" autocomplete="nickname"></section>
+    <section><h2 class="sec">Seu setor</h2>
+      <div class="chips">${SETORES.map(s=>`<button data-s="${s}">${s}</button>`).join("")}</div></section>
+    <label class="check"><input type="checkbox" id="show" checked> Aparecer no ranking geral com meu apelido</label>
+    <button class="btn sun" id="go" disabled style="opacity:.5">Entrar na Liga</button>
+    <button class="gbtn" id="google"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar com Google para salvar o progresso</button>
+    <p class="fine">Sem senha e sem cadastro. A empresa vê só os números do grupo, nunca o que cada pessoa fez.</p>
+  </main>`;
+  const go = document.getElementById("go"), nick = document.getElementById("nick");
+  const check = () => { const ok = nick.value.trim().length>=2 && setor; go.disabled=!ok; go.style.opacity = ok?1:.5; };
+  document.querySelectorAll(".avpick button").forEach(b=>b.onclick=()=>{ pick=+b.dataset.i; document.querySelectorAll(".avpick button").forEach(x=>x.classList.toggle("on",x===b)); });
+  document.querySelectorAll(".chips button").forEach(b=>b.onclick=()=>{ setor=b.dataset.s; document.querySelectorAll(".chips button").forEach(x=>x.classList.toggle("on",x===b)); check(); });
+  nick.oninput = check;
+  const enter = (google) => {
+    const n = nick.value.trim() || "Você";
+    S.me = {nick:n.replace(/[<>&"]/g,""), s:setor||"Costura", av:ESCOLHAS[pick]};
+    S.show = document.getElementById("show").checked; S.google = !!google;
+    // histórico de exemplo desta semana, para a Liga já ter vida
+    const ws = weekStart(), now = Date.now();
+    [[ws+10*36e5,5,"a-pescoco","ajuste","pescoco"],[ws+(24+15)*36e5,1,"r-punhos","respiro","punhos"]].forEach(([t,m,c,k,cat])=>{ if(t<now-36e5) S.log.push({t,min:m,c,k,cat}); });
+    save(); home(); if(google) toast("Demonstração: na versão final, aqui abre o login do Google.");
+  };
+  go.onclick = () => enter(false);
+  document.getElementById("google").onclick = () => { if(!setor||nick.value.trim().length<2){ toast("Escolha apelido e setor primeiro."); return; } enter(true); };
+  window.scrollTo(0,0);
+}
+
+function toast(msg){
+  const t=document.createElement("div"); t.className="toast"; t.textContent=msg; document.body.appendChild(t);
+  setTimeout(()=>t.classList.add("in"),20); setTimeout(()=>{t.classList.remove("in"); setTimeout(()=>t.remove(),300)},3200);
+}
+
+/* ---------- início ---------- */
+function home(){
+  stopTimer();
+  if(!S.me) return onboarding();
+  const w = myWeek(), nv = nivel(totalMin()), rk = myRank(), st = setores().findIndex(x=>x.mine)+1;
+  app.innerHTML = `
+  <header class="top">
+    <div class="brandrow">
+      <div class="brand">${LOGO(36)}<div><b>break</b><span>leve</span></div></div>
+      <div class="company">Programa de pausas<strong>${EMPRESA}</strong></div>
+    </div>
+    <button class="liga" id="ligacard">
+      <div class="ringwrap">${ring(w.min, META_SEM, 84, 9)}<div class="ringtxt"><b>${Math.min(w.min,99)}</b><span>de ${META_SEM} min</span></div></div>
+      <div class="ligainfo">
+        <div class="hi">${avatar(S.me.av,28)}<span>Oi, <b>${S.me.nick}</b></span></div>
+        <div class="lv">Nível ${nv.n} · ${nv.nome}</div>
+        <div class="stats"><span><b>${w.pts}</b> pts na semana</span><span>${rk?`<b>#${rk}</b> geral`:"fora do ranking"}</span><span><b>#${st}</b> ${S.me.s}</span></div>
+      </div>
+    </button>
+    <div class="streak"><span class="dot"></span>${w.min>=META_SEM ? "Meta da semana batida! Você está no sorteio." : w.days>=3 ? `Bônus de constância garantido. Faltam ${META_SEM-w.min} min para a meta.` : `Faça pausas em ${3-w.days} ${3-w.days===1?"dia":"dias"} a mais e ganhe +${BONUS_3D} pts de bônus.`}</div>
+  </header>
+  <main class="withtabs">
+    <button class="month" id="mes">
+      <small>Desafio de ${MES.nome}</small>
+      <span class="t">${MES.tema}</span>
+      <span class="d">${MES.desc}</span>
+      <span class="go">Fazer o Ajuste do mês · 5 min</span>
+    </button>
+    <section>
+      <h2 class="sec">Quanto tempo você tem?</h2>
+      <div class="times">
+        <button class="time" data-k="respiro"><span class="n">Respiro</span><span class="m">1 min · +1 pt</span></button>
+        <button class="time" data-k="ajuste"><span class="n">Ajuste</span><span class="m">5 min · +5 pts</span></button>
+        <button class="time" data-k="recarga"><span class="n">Recarga</span><span class="m">15 min · +15 pts</span></button>
+      </div>
+    </section>
+    <section>
+      <h2 class="sec">O que você está sentindo?</h2>
+      <div class="feels">
+        ${Object.keys(CATS).map(c=>`<button class="feel" data-c="${c}">${icon(c)}<span>${CATS[c]}</span></button>`).join("")}
+      </div>
+    </section>
+    <button class="libbtn" id="lib">Ver todos os exercícios</button>
+    <p class="fine" style="text-align:center">Protótipo da Liga Break Leve · pessoas e números fictícios</p>
+  </main>
+  ${tabs("inicio")}`;
+  document.getElementById("ligacard").onclick = liga;
+  document.getElementById("mes").onclick = () => intro(COMBOS.find(c=>c.id===MES.combo), home);
+  document.querySelectorAll(".time").forEach(b=>b.onclick=()=>listByKind(b.dataset.k));
+  document.querySelectorAll(".feel").forEach(b=>b.onclick=()=>listByCat(b.dataset.c));
+  document.getElementById("lib").onclick = library;
+  bindTabs(); window.scrollTo(0,0);
+}
+
+/* ---------- Liga: ranking por setor e geral ---------- */
+let ligaTab = "setores";
+function liga(){
+  stopTimer();
+  if(!S.me) return onboarding();
+  const sets = setores(), ps = players();
+  const max = sets[0].avg || 1;
+  app.innerHTML = `<div class="bar"><span class="ttl" style="padding:8px 4px">Liga Break Leve · ${MES.nome}</span></div>
+  <main class="withtabs">
+    <div class="prize">${MEDAL}<div><b>Prêmios do mês</b><span>${PREMIO.setor}.<br>${PREMIO.sorteio}.</span></div></div>
+    <div class="seg"><button data-t="setores" class="${ligaTab==="setores"?"on":""}">Copa dos Setores</button><button data-t="geral" class="${ligaTab==="geral"?"on":""}">Ranking geral</button></div>
+    ${ligaTab==="setores" ? `
+      <div class="list">${sets.map((x,i)=>`
+        <div class="srow ${x.mine?"mine":""}">
+          <div class="pos">${i+1}º</div>
+          <div class="sbody"><div class="sname">${x.s}${x.mine?` <span class="pill p-mes">seu setor</span>`:""}</div>
+            <div class="sbar"><i style="width:${Math.round(x.avg/max*100)}%"></i></div>
+            <div class="smeta">${x.avg} pts por pessoa · ${x.ades}% do setor participando</div></div>
+        </div>`).join("")}</div>
+      <p class="fine">A Copa usa a média de pontos por pessoa, para setor pequeno competir de igual com setor grande.</p>`
+    : `
+      <div class="list">${ps.map((p,i)=>`
+        <div class="prow ${p.me?"mine":""}">
+          <div class="pos">${i<3?["🥇","🥈","🥉"][i]:(i+1)+"º"}</div>
+          ${avatar(p.av,44)}
+          <div class="pbody"><div class="pname">${p.nick}${p.me?" (você)":""}</div><div class="smeta">${p.s}</div></div>
+          <div class="ppts"><b>${p.pts}</b><span>pts</span></div>
+        </div>`).join("")}</div>
+      ${S.show?"":`<p class="fine">Você escolheu não aparecer no ranking geral. Seus pontos continuam valendo para o seu setor.</p>`}`}
+    <details class="rules"><summary>Como funciona a pontuação</summary>
+      <ul><li><b>1 ponto por minuto</b> de pausa concluída.</li>
+      <li><b>Teto de ${CAP_DIA} pontos por dia.</b> Mais que isso não conta: descanso também faz parte.</li>
+      <li><b>+${BONUS_3D} pontos</b> de bônus para quem faz pausa em 3 dias da semana.</li>
+      <li>Bateu a <b>meta de ${META_SEM} min</b> na semana? Você entra no sorteio.</li>
+      <li>O ranking zera toda segunda. Seu nível e suas conquistas ficam para sempre.</li></ul></details>
+    <button class="libbtn" id="rh">Ver painel do RH (demonstração)</button>
+  </main>${tabs("liga")}`;
+  document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{ ligaTab=b.dataset.t; liga(); });
+  document.getElementById("rh").onclick = rh;
+  bindTabs(); window.scrollTo(0,0);
+}
+
+/* ---------- Eu: nível, semana, conquistas ---------- */
+function perfil(){
+  stopTimer();
+  if(!S.me) return onboarding();
+  const w = myWeek(), tm = totalMin(), nv = nivel(tm), got = earned();
+  const ws = weekStart(), dias = ["Seg","Ter","Qua","Qui","Sex"];
+  const vals = dias.map((d,i)=>{ const k=dayKey(ws+i*864e5+12*36e5); return Math.min(w.per[k]||0, CAP_DIA); });
+  const pct = nv.prox ? Math.round((tm-nv.base)/(nv.prox-nv.base)*100) : 100;
+  app.innerHTML = `<div class="bar"><span class="ttl" style="padding:8px 4px">Meu progresso</span></div>
+  <main class="withtabs">
+    <div class="me">${avatar(S.me.av,76)}<div><div class="mename">${S.me.nick}</div><div class="smeta">${S.me.s} · ${EMPRESA}</div>
+      <div class="lvl">Nível ${nv.n} · ${nv.nome}</div></div></div>
+    <div class="card"><div class="row"><b>${tm} minutos de cuidado</b><span class="smeta">${nv.prox?`faltam ${nv.prox-tm} para ${nv.proxNome}`:"nível máximo"}</span></div>
+      <div class="sbar big"><i style="width:${pct}%"></i></div></div>
+    <div class="card"><div class="row"><b>Esta semana</b><span class="smeta">${w.pts} pts · sequência de ${S.streak+(w.days?1:0)} semanas</span></div>
+      <div class="week">${dias.map((d,i)=>`<div><div class="wcol"><i style="height:${Math.max(vals[i]/CAP_DIA*100, vals[i]?8:0)}%"></i></div><span>${d}</span><small>${vals[i]||""}</small></div>`).join("")}</div></div>
+    <section><h2 class="sec">Conquistas · ${got.length} de ${CONQ.length}</h2>
+      <div class="badges">${CONQ.map(c=>`<div class="badge ${got.includes(c[0])?"":"off"}">${MEDAL}<b>${c[1]}</b><span>${c[2]}</span></div>`).join("")}</div></section>
+    ${S.google ? `<p class="fine" style="text-align:center">Progresso salvo na sua conta Google.</p>` : `<button class="gbtn" id="google">Salvar meu progresso com Google</button>`}
+    <label class="check"><input type="checkbox" id="show" ${S.show?"checked":""}> Aparecer no ranking geral</label>
+    <button class="libbtn" id="reset">Recomeçar a demonstração</button>
+  </main>${tabs("eu")}`;
+  const g = document.getElementById("google"); if(g) g.onclick = () => { S.google = true; save(); toast("Demonstração: na versão final, aqui abre o login do Google."); perfil(); };
+  document.getElementById("show").onchange = e => { S.show = e.target.checked; save(); };
+  document.getElementById("reset").onclick = () => { S = null; try{localStorage.removeItem("bl_liga")}catch(e){} load(); onboarding(); };
+  bindTabs(); window.scrollTo(0,0);
+}
+
+/* ---------- painel do RH (só números do grupo) ---------- */
+function rh(){
+  stopTimer();
+  const sets = setores();
+  const sem = [["S1",38],["S2",44],["S3",51],["S4",55],["S5",58],["Agora",61]];
+  app.innerHTML = bar("Painel do RH") + `<main>
+    <div class="note">Exemplo do que o RH da <strong>${EMPRESA}</strong> recebe. Só números do grupo: ninguém é monitorado individualmente.</div>
+    <div class="kpis">
+      <div><b>61%</b><span>dos colaboradores fizeram pausa na semana</span></div>
+      <div><b>1.284</b><span>minutos de pausa na semana</span></div>
+      <div><b>3,4</b><span>pausas por pessoa ativa</span></div>
+      <div><b>Ajuste</b><span>pausa mais usada (Punhos e mãos)</span></div>
+    </div>
+    <div class="card"><div class="row"><b>Participação semanal</b><span class="smeta">% dos colaboradores</span></div>
+      <div class="week">${sem.map(([l,v])=>`<div><div class="wcol"><i style="height:${v}%;background:${l==="Agora"?"var(--sun)":"var(--mint)"}"></i></div><span>${l}</span><small>${v}%</small></div>`).join("")}</div></div>
+    <div class="card"><b>Copa dos Setores</b>
+      ${sets.map((x,i)=>`<div class="row" style="margin-top:10px"><span>${i+1}º ${x.s}</span><span class="smeta">${x.ades}% participando · ${x.avg} pts/pessoa</span></div>`).join("")}</div>
+    <div class="card"><b>Prêmios do mês</b><p style="margin:6px 0 0;font-size:14px">${PREMIO.setor}.<br>${PREMIO.sorteio}. O sistema sorteia e mostra só o apelido de quem ganhou.</p></div>
+    <div class="card"><b>Horário com mais pausas</b><p style="margin:6px 0 0;font-size:14px">Entre 9h30 e 10h e depois do almoço, das 13h às 13h30.</p></div>
+  </main>`;
+  document.getElementById("back").onclick = liga;
+  window.scrollTo(0,0);
+}
+
+/* ---------- listas, introdução e player (como antes) ---------- */
+function bar(title){
+  return `<div class="bar"><button class="back" id="back" aria-label="Voltar">‹ Voltar</button><span class="ttl">${title}</span></div>`;
+}
+function comboCard(c){
+  const [k,,cls] = KIND[c.k];
+  return `<button class="combo" data-id="${c.id}">
+    <span class="k"><span class="pill ${cls}">${k} · ${mins(c)}</span>${c.c && CATS[c.c] ? CATS[c.c] : ""}</span>
+    <span class="t">${c.t}</span>
+    <span class="s">${c.s.map(x=>EX[x[0]].n).join(" · ")}</span>
+  </button>`;
+}
+function bindCombos(back){ document.querySelectorAll(".combo").forEach(b=>b.onclick=()=>intro(COMBOS.find(c=>c.id===b.dataset.id), back)); }
+function listByKind(k){
+  stopTimer();
+  const items = COMBOS.filter(c=>c.k===k), [name,dur] = KIND[k];
+  app.innerHTML = bar(`${name} · ${dur}`) + `<main><div class="list">${items.map(comboCard).join("")}</div></main>`;
+  document.getElementById("back").onclick = home; bindCombos(()=>listByKind(k)); window.scrollTo(0,0);
+}
+function listByCat(cat){
+  stopTimer();
+  const items = COMBOS.filter(c=>c.k!=="mes" && c.c.split(" ").includes(cat)).sort((a,b)=>total(a)-total(b));
+  app.innerHTML = bar(CATS[cat]) + `<main><div class="list">${items.map(comboCard).join("")}</div></main>`;
+  document.getElementById("back").onclick = home; bindCombos(()=>listByCat(cat)); window.scrollTo(0,0);
+}
+const ptsOf = c => Math.max(1, Math.round(total(c)/60));
+function intro(c, back){
+  stopTimer();
+  app.innerHTML = bar(c.t) + `<main>
+    <div class="combo" style="cursor:default">
+      <span class="k"><span class="pill ${KIND[c.k][2]}">${KIND[c.k][0]} · ${mins(c)}</span><span class="pill p-respiro">+${ptsOf(c)} ${ptsOf(c)===1?"ponto":"pontos"}</span></span>
+      <span class="t">${c.t}</span>
+      <span class="s">${c.s.length} ${c.s.length===1?"exercício":"exercícios"} · ${fmt(total(c))}</span>
+    </div>
+    <ol style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px">${c.s.map(x=>`<li><strong>${EX[x[0]].n}</strong> <span style="color:var(--muted)">· ${fmt(x[1])}</span></li>`).join("")}</ol>
+    <div class="note"><strong>Antes de começar:</strong> movimento leve, sem dor. Se doer, diminua ou pare. Máquina parada antes de começar.</div>
+    <button class="btn sun" id="start">Começar</button>
+  </main>`;
+  document.getElementById("back").onclick = back;
+  document.getElementById("start").onclick = () => play(c, 0, back);
+  window.scrollTo(0,0);
+}
+function play(c, i, back){
+  stopTimer();
+  const [id, secs] = c.s[i], e = EX[id];
+  let left = secs, running = true;
+  const done = c.s.slice(0,i).reduce((a,x)=>a+x[1],0);
+  app.innerHTML = bar(c.t) + `<div class="player">
+    <div class="stepinfo"><span>Exercício ${i+1} de ${c.s.length}</span><span>${KIND[c.k][0]} · +${ptsOf(c)} pts</span></div>
+    <div class="progress"><i id="prog"></i></div>
+    <div class="video"><video id="vid" src="../v/${id}.mp4" poster="../v/${id}.jpg" autoplay muted loop playsinline preload="auto" aria-label="Vídeo: ${e.n}"></video></div>
+    <h2 class="exname">${e.n}</h2>
+    <p class="how">${e.how}</p>
+    <div class="dose">${e.dose}</div>
+    <div class="timer"><div class="clock" id="clock" aria-live="polite">${fmt(left)}</div></div>
+    <div class="ctrl">
+      <button class="btn soft" id="prev" ${i===0?"disabled style='opacity:.4'":""}>Anterior</button>
+      <button class="btn main" id="pause">Pausar</button>
+      <button class="btn soft" id="next">${i===c.s.length-1?"Concluir":"Próximo"}</button>
+    </div>
+    <button class="skip" id="skip">⏩ Demonstração: concluir a pausa agora</button>
+  </div>`;
+  const clock = document.getElementById("clock"), prog = document.getElementById("prog"), pb = document.getElementById("pause"), T = total(c);
+  const paint = () => { clock.textContent = fmt(left); prog.style.width = ((done + secs - left)/T*100) + "%"; };
+  paint();
+  const next = () => i < c.s.length-1 ? play(c, i+1, back) : finish(c, back);
+  timer = setInterval(()=>{ if(!running) return; left--; paint(); if(left<=0){ next(); } }, 1000);
+  const vid = document.getElementById("vid");
+  pb.onclick = () => { running = !running; pb.textContent = running ? "Pausar" : "Continuar"; try{ running ? vid.play() : vid.pause(); }catch(err){} };
+  document.getElementById("next").onclick = next;
+  document.getElementById("prev").onclick = () => { if(i>0) play(c, i-1, back); };
+  document.getElementById("skip").onclick = () => finish(c, back);
+  document.getElementById("back").onclick = () => { stopTimer(); back(); };
+  window.scrollTo(0,0);
+}
+
+/* ---------- pausa concluída: pontos, ranking e conquistas ---------- */
+function finish(c, back){
+  stopTimer();
+  const before = myWeek(), rkBefore = myRank(), stBefore = setores().findIndex(x=>x.mine)+1, gotBefore = earned();
+  const m = ptsOf(c), today = before.per[dayKey(Date.now())]||0;
+  const credited = Math.max(0, Math.min(m, CAP_DIA - today));
+  S.log.push({t:Date.now(), min:m, c:c.id, k:c.k, cat:c.c}); save();
+  const after = myWeek(), rk = myRank(), st = setores().findIndex(x=>x.mine)+1;
+  const gained = after.pts - before.pts, novas = CONQ.filter(x=>x[3]() && !gotBefore.includes(x[0]));
+  const subiu = rkBefore && rk && rk < rkBefore;
+  app.innerHTML = `<div class="done">
+    <div class="ringwrap big">${ring(after.min, META_SEM, 150, 14)}<div class="ringtxt"><b>+${gained}</b><span>${gained===1?"ponto":"pontos"}</span></div></div>
+    <h2>Pausa concluída!</h2>
+    <p>${after.min>=META_SEM && before.min<META_SEM ? "<strong>Meta da semana batida!</strong> Você está no sorteio." : `${Math.min(after.min,META_SEM)} de ${META_SEM} minutos da meta da semana.`}
+      ${after.days>=3 && before.days<3 ? `<br><strong>+${BONUS_3D} de bônus</strong> por 3 dias de pausa!` : ""}</p>
+    ${credited<m ? `<p class="fine">Você chegou ao teto de ${CAP_DIA} pontos hoje. A pausa valeu para o corpo; os pontos voltam amanhã.</p>`:""}
+    <div class="climb">
+      ${rk ? `<div><b>#${rk}</b><span>geral ${subiu?`<em>▲ ${rkBefore-rk}</em>`:""}</span></div>` : ""}
+      <div><b>#${st}</b><span>${S.me.s} ${st<stBefore?`<em>▲ ${stBefore-st}</em>`:""}</span></div>
+      <div><b>${after.pts}</b><span>pts na semana</span></div>
+    </div>
+    ${novas.map(n=>`<div class="newbadge">${MEDAL}<div><small>Nova conquista</small><b>${n[1]}</b></div></div>`).join("")}
+    <p class="anchor" style="color:var(--ink);font-size:19px">Cuidar de você <em style="color:var(--sun-text)">faz parte do trabalho.</em></p>
+    <div style="display:flex;gap:10px;width:100%;max-width:340px"><button class="btn soft" id="seeliga" style="flex:1">Ver a Liga</button><button class="btn sun" id="home" style="flex:1">Início</button></div>
+  </div>`;
+  document.getElementById("home").onclick = home;
+  document.getElementById("seeliga").onclick = () => { ligaTab = "geral"; liga(); };
+}
+
+function library(){
+  stopTimer();
+  const ids = Object.keys(EX);
+  app.innerHTML = bar("Todos os exercícios") + `<main>
+    <label for="q" class="hidden">Buscar exercício</label>
+    <input id="q" class="search" type="search" placeholder="Buscar: ombro, punho, respiração…">
+    <div class="lib" id="libl"></div></main>`;
+  const render = q => {
+    q = (q||"").toLowerCase();
+    document.getElementById("libl").innerHTML = ids.filter(id=>{
+      const e = EX[id]; return !q || (e.n+" "+e.r+" "+e.how).toLowerCase().includes(q);
+    }).map(id=>{const e=EX[id]; return `<div class="libitem"><img src="../v/${id}.jpg" alt="" loading="lazy"><div><div class="t">${e.n}</div><div class="s">${e.r} · ${e.dose}</div><p>${e.how}</p></div></div>`}).join("") || `<p>Nenhum exercício encontrado. Tente outra palavra.</p>`;
+  };
+  render("");
+  document.getElementById("q").oninput = ev => render(ev.target.value);
+  document.getElementById("back").onclick = home;
+  window.scrollTo(0,0);
+}
+
+home();
+</script>
+</body>
+</html>
